@@ -1,9 +1,21 @@
+#login-link {
+  color: white;
+}
+
+a {
+  color: #bb86fc;
+}
+
 .uk-heading-medium {
-  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  color: white;
+
 }
 
 .uk-container {
-  background-color: rgb(245, 245, 245);
+  background-color: #303030;
   border-radius: 5px;
 }
 
