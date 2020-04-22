@@ -1,3 +1,20 @@
+.uk-heading-medium {
+  margin: auto;
+}
+
+.uk-container {
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+.uk-container>:last-child {
+  margin-bottom: 20px;
+}
+
+.uk-card-body {
+  margin: auto;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
