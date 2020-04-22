@@ -1,4 +1,28 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+    margin-top: 50px;
+}
+
+.uk-card {
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+.uk-card-body {
+    margin: auto;
+}
+
+.uk-heading-medium,
+.uk-button {
+    margin: auto;
+    color: white;
+}
+
+.uk-button:hover {
+    color: white;
+}
+
+body {
+    background: url('/public/imgs/space.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
