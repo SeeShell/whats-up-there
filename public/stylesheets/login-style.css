@@ -2,6 +2,15 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+a:hover {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
 .uk-card {
     background-color: #303030da;
     border-radius: 5px;

@@ -2,18 +2,22 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-#icon1 {
+a {
+    color: #bb86fc;
+}
+
+#bookmark-icon {
     margin: 10px;
     padding-right: 50px;
 }
 
-#icon2 {
+#location-icon {
     margin: 10px;
     padding-left: 10px;
     padding-right: 60px;
 }
 
-#icon3 {
+#user-icon {
     margin: 10px;
     padding-right: 25px;
 }
