@@ -10,32 +10,41 @@ $(document).ready(function() {
 
   function getFavorites() {
     $("#favorites-list-ul").empty();
-    $.get("/api/user_favorites").then(function(data) {
-      for (let i = 0; i < data.length; i++) {
-        list.text(
-          `${data[i].nickname} <button class='uk-button delete-button'>remove</button>`
-        );
-        list.attr("data-id", data[i].id);
-        $("#favorites-list").append(list);
-      }
+    test();
+    // $.get("/api/user_favorites").then(function(data) {
+    //   for (let i = 0; i < data.length; i++) {
+    //     var list = $("<li>");
+    //     list.text(
+    //       `${data[i].nickname} <button class='uk-button delete-button'>remove</button>`
+    //     );
+    //     list.attr("data-id", data[i].id);
+    //     $("#favorites-list").append(list);
+    //   }
+    // });
+
+    $("#delete").on("click", function() {
+      const id = $(this)
+        .parent()
+        .attr("data-id");
+      console.log(id);
+      // $.ajax({
+      //   method: "DELETE",
+      //   url: "/api/user_favorites" + id
+      // }).then(function() {
+      //   getFavorites();
+      // });
     });
   }
 
-  var user = $("<p>").text("Hello, World!");
-  $("#user").append(user);
-  const id = $(this)
-    .parent()
-    .attr("data-id");
-  console.log(id);
-  $("#delete").on("click", function() {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/user_favorites" + id
-    }).then(function() {
-      getFavorites();
-    });
-  });
-
   getUser();
   getFavorites();
+
+  function test() {
+    var list = $("<li>");
+    list.html(
+      "Lil Bubs <button class='uk-button delete-button' id='delete'>remove</button>"
+    );
+    list.attr("data-id", "1");
+    $("#favorites-list").append(list);
+  }
 });
