@@ -3,6 +3,15 @@ form.login {
     margin-top: 50px;
 }
 
+#icon {
+    margin: 10px;
+}
+
+#navBar {
+    background-color: #303030da !important;
+    color: white !important;
+}
+
 .uk-card {
     background-color: #303030da;
     border-radius: 5px;
@@ -18,8 +27,9 @@ form.login {
 }
 
 .uk-heading-medium,
-.uk-button {
-    margin: auto;
+.uk-button,
+.uk-heading-small {
+    margin: 10px;
     color: white;
 }
 

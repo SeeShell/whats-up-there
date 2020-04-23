@@ -2,34 +2,57 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+    <title>what's up there</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.1/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+    <div class="uk-cover-container" uk-height-viewport>
+        <img src="imgs/space.png" alt="" uk-cover>
 
+        <!-- TOP NAV -->
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: #transparent-sticky-navbar">
+            <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
+                <div class="uk-navbar-center">
+
+                    <ul class="uk-navbar-nav">
+                        <p class="uk-heading-small">what's up there</p>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- BOTTOM NAV -->
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+            <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
+                <div class="uk-navbar-center">
+
+                    <ul class="uk-navbar-nav">
+                        <li><span uk-icon="icon: bookmark; ratio: 2" id="icon" class="uk-align-left"></span></li>
+                        <li><span uk-icon="icon: location; ratio: 2" id="icon" class="uk-align-center"></span></li>
+                        <li><span uk-icon="icon: user; ratio: 2" id="icon" class="uk-align-right"></span></li>
+                    </ul>
+
+
+                </div>
+            </nav>
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+
+    <script type="text/javascript " src="js/signup.js "></script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 
 </html>
