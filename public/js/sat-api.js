@@ -43,8 +43,35 @@ window.satApi = {
           });`;
           pointGraphics += `pointGraphic${i}, `;
         }
-        console.log(points);
-        console.log(pointGraphics);
+        let mapDisplayData = `require([
+          "esri/Map",
+          "esri/PopupTemplate",
+          "esri/views/MapView",
+          "esri/Graphic",
+          "esri/geometry/Point"
+        ], function (Map, PopupTemplate, MapView, Graphic, Point) {
+          const map = new Map({
+            basemap: "satellite"
+          });
+  
+          const view = new MapView({
+            center: [${userLon}, ${userLat}],
+            container: "viewDiv",
+            map: map,
+            zoom: 4
+          });
+        ${points}
+        const textSymbol = {
+          type: "text", // autocasts as new TextSymbol()
+          color: "#7A003C",
+          text: "\ue680",
+          font: {
+            size: 24,
+            family: "CalciteWebCoreIcons"
+          }
+        };
+        view.graphics.addMany([${pointGraphics}]);`;
+        console.log(mapDisplayData);
         return points;
       });
     });
