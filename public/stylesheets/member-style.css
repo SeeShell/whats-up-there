@@ -1,25 +1,43 @@
-form.signup,
-form.login {
-    margin-top: 50px;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #icon {
     margin: 10px;
 }
 
+.uk-modal-dialog {
+    background-color: #303030da;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+#time {
+    font-size: 65px;
+}
+
+#city {
+    font-weight: 300;
+}
+
+#time,
+#city,
+#favorite-city {
+    font-size: 60px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
 #navBar {
     background-color: #303030da !important;
     color: white !important;
-}
-
-.uk-card {
-    background-color: #303030da;
-    border-radius: 5px;
-}
-
-.uk-container {
-    background-color: #3030309a;
-    border-radius: 5px;
 }
 
 .uk-card-body {
@@ -30,6 +48,7 @@ form.login {
 .uk-button,
 .uk-heading-small {
     margin: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
     color: white;
 }
 
