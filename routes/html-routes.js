@@ -5,7 +5,8 @@ module.exports = function(app) {
   const styleArray = [
     { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
-    { stylesheet: "stylesheets/member-style.css" }
+    { stylesheet: "stylesheets/member-style.css" },
+    { stylesheet: "stylesheets/account-style.css" }
   ];
 
   app.get("/", function(req, res) {
@@ -28,5 +29,9 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members", styleArray[2]);
+  });
+
+  app.get("/account", isAuthenticated, function(req, res) {
+    res.render("account", styleArray[3]);
   });
 };
