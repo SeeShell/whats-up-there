@@ -1,0 +1,33 @@
+#login-link {
+  color: white;
+}
+
+a {
+  color: #bb86fc;
+}
+
+.uk-heading-medium {
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  color: white;
+
+}
+
+.uk-container {
+  background-color: #303030;
+  border-radius: 5px;
+}
+
+.uk-container>:last-child {
+  margin-bottom: 20px;
+}
+
+.uk-card-body {
+  margin: auto;
+}
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}

@@ -1,0 +1,34 @@
+form.signup,
+form.login {
+    margin-top: 50px;
+}
+
+.uk-card {
+    background-color: #303030da;
+    border-radius: 5px;
+}
+
+.uk-container {
+    background-color: #3030309a;
+    border-radius: 5px;
+}
+
+.uk-card-body {
+    margin: auto;
+}
+
+.uk-heading-medium,
+.uk-button {
+    margin: auto;
+    color: white;
+}
+
+.uk-button:hover {
+    color: white;
+}
+
+body {
+    background: url('/public/imgs/space.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
