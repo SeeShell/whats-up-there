@@ -77,9 +77,3 @@ body {
 .uk-button:hover {
     color: white;
 }
-
-body {
-    background: url('/public/imgs/space.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
