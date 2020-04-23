@@ -8,7 +8,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     satID: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    nickname: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
