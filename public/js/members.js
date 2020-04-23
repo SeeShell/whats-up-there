@@ -12,7 +12,7 @@ function logLocation(position) {
 
   localStorage.setItem("userLon", userLon);
   localStorage.setItem("userLat", userLat);
-  satApi.getAbove(userLon, userLat);
+  satApi.getAbove(userLon, userLat, 0);
 }
 
 // CLOCK
