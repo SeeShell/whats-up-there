@@ -4,7 +4,13 @@ form.login {
 }
 
 .uk-card {
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: #303030da;
+    border-radius: 5px;
+}
+
+.uk-container {
+    background-color: #3030309a;
+    border-radius: 5px;
 }
 
 .uk-card-body {
