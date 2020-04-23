@@ -15,7 +15,8 @@ module.exports = function(app) {
             id: fav.dataValues.id,
             satName: fav.dataValues.satName,
             satID: fav.dataValues.satID,
-            nickname: fav.dataValues.nickname
+            nickname: fav.dataValues.nickname,
+            launchDate: fav.dataValues.launchDate
           };
         });
         res.json(userFavs);
