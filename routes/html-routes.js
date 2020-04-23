@@ -5,7 +5,8 @@ module.exports = function(app) {
   const styleArray = [
     { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
-    { stylesheet: "stylesheets/member-style.css" }
+    { stylesheet: "stylesheets/member-style.css" },
+    { stylesheet: "stylesheets/map-style.css" }
   ];
 
   app.get("/", function(req, res) {
