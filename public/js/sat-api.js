@@ -17,19 +17,21 @@ window.satApi = {
   },
 
   getAbove: (userLon, userLat, categoryID) => {
-    let searchRadius = 45;
+    let searchRadius = 20;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
     $(function() {
       $.ajax({
         url: queryN2YO + aboveQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        let aboveData = result.above.map(sat => {
-          return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
-        });
+        // let aboveData = result.above.map(sat => {
+        //   return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
+        // });
         console.log(aboveData.length);
         console.log(result);
-        return result, aboveData;
+        const aboveData = result.above;
+        renderPoints(aboveData);
+        return aboveData;
       });
     });
   }
