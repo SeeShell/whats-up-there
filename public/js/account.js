@@ -1,6 +1,8 @@
 $(document).ready(function() {
   function getUser() {
+    $("#user").empty();
     $.get("/api/user_data").then(function(data) {
+      var user = $("<p>").text("Hello, World!");
       user.text(data.email);
       user.attr("data-id", data.id);
     });
