@@ -9,18 +9,21 @@ $(document).ready(function() {
   }
 
   function getFavorites() {
+    $("#favorites-list-ul").empty();
+
     var list = $("<li>");
     list.html(
-      `<a class="uk-accordion-title" href="#">Steve</a>
+      `
+      <a class="uk-accordion-title uk-text-left" href="#">Steve</a>
         <div class="uk-accordion-content">
-        <p>10, satty 1, 02-24-2020</p>
-      </div>
-      <button class='uk-button delete-button'>remove</button>`
+          <p class="uk-text-center">10, satty 1, 02-24-2020</p>
+          <button class='uk-button delete-button '>remove</button>
+        </div>
+      `
     );
-    list.attr("data-id", data[i].id);
-    $("#favorites-list").append(list);
+    list.attr("data-id", "1");
+    $("#list").append(list);
 
-    $("#favorites-list-ul").empty();
     // $.get("/api/user_favorites").then(function(data) {
     //   for (let i = 0; i < data.length; i++) {
     //     var list = $("<li>");

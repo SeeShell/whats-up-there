@@ -23,7 +23,7 @@ a {
   margin: 0px;
 }
 
-#favorites-list, #favorites-list li {
+#favorites-list, #favorites-list a {
   color: white;
   background-color: #303030;
   margin: 10px 50px;
