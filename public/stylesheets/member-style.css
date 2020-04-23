@@ -1,29 +1,61 @@
-body {
+body,
+h3 {
+    color: white;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-a {
+.uk-offcanvas-bar {
+    background-color: #303030e1;
+    opacity: 0.95;
+}
+
+a:hover {
     color: #bb86fc;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
+#bookmark-icon1 {
+    margin: 0px;
+    padding-right: 10px;
 }
 
 #bookmark-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
     margin: 10px;
-    padding-right: 50px;
+    padding-right: 40px;
+}
+
+#sat-icon {
+    padding-bottom: 0px;
+    padding-right: 40px;
+    padding-left: 10px;
+    padding-top: 25px;
+    font-size: 35px;
+    margin: 0px;
 }
 
 #location-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
     margin: 10px;
     padding-left: 10px;
-    padding-right: 60px;
+    padding-right: 40px;
 }
 
 #user-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
     margin: 10px;
-    padding-right: 25px;
+    padding-right: 10px;
 }
 
 .uk-modal-dialog {
-    background-color: #303030da;
+    background-color: #303030e1;
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 10px;
