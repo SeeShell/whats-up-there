@@ -2,154 +2,78 @@
 <html lang="en">
 
 <head>
-    <title>what's up there?</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.1/dist/css/uikit.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/member-style.css">
+  <title>what's up there?</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.1/dist/css/uikit.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/account-style.css">
 </head>
 
 <body>
 
-    <div class="uk-cover-container" uk-height-viewport>
-        <img src="imgs/space.png" alt="" uk-cover id="aerial-image">
+  <div class="uk-cover-container" uk-height-viewport>
+    <img src="imgs/ground-space.jpg" alt="" uk-cover id="aerial-image">
 
-        <!-- MARKER ONE -->
-        <a href="#satellite1" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 20%; top: 66%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
+    <!-- TOP NAV -->
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: #transparent-sticky-navbar">
+      <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
+        <div class="uk-navbar-center">
 
-        <div id="satellite1" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite1">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
+          <ul class="uk-navbar-nav">
+            <p class="uk-heading-small">what's up there?</p>
+          </ul>
 
-                <p id="satellite-1" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : TELEVISION <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-            </div>
         </div>
-
-        <!-- MARKER TWO -->
-        <a href="#satellite2" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite2" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite2">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-2" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945
-                <br> CLASSIFICATION : PHONE <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-
-            </div>
-        </div>
-
-        <!-- MARKER THREE -->
-        <a href="#satellite3" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite3" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite3">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-3" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : USA <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-
-            </div>
-        </div>
-
-
-        <!-- MARKER FOUR -->
-        <a href="#satellite4" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 80%; top: 50%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite4" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite4">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-4" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945
-                <br> CLASSIFICATION : CHINA <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-            </div>
-        </div>
-
-
-        <!-- MARKER FIVE -->
-        <a href="#satellite5" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 45%; top: 50%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite5" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite5">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-
-                <p id="satellite-5" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : RUSSIAN <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-
-
-            </div>
-        </div>
-
-        <!-- TOP NAV -->
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: #transparent-sticky-navbar">
-            <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
-                <div class="uk-navbar-center">
-
-                    <ul class="uk-navbar-nav">
-                        <p class="uk-heading-small">what's up there?</p>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
-
-        <!--USER DASHBOARD -->
-        <div class="uk-align-center">
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="user">
-            </div>
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="favorite-city">
-            </div>
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="time">
-            </div>
-        </div>
-
-        <!-- BOTTOM NAV -->
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-            <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
-                <div class="uk-navbar-center">
-                    <ul class="uk-navbar-nav">
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: bookmark; ratio: 2" id="icon1" class="uk-align-left uk-animation-scale-up"></span></li>
-                        </div>
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: location; ratio: 2" id="icon2" class="uk-align-center uk-animation-scale-up"></span></li>
-                        </div>
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: user; ratio: 2" id="icon3" class="uk-align-right uk-animation-scale-up"></span></li>
-                        </div>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-
+      </nav>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <script type="text/javascript" src="./js/members.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+
+    <!-- User Panel -->
+    <div class="uk-align-center">
+      <div class="uk-align-center uk-card uk-card-default uk-card-body" id="user">
+      </div>
+      <div class="uk-card uk-card uk-card-default uk-card-body" id="favorites-list">
+        <ul class="uk-list uk-list" id="favorites-list-ul" >
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- BOTTOM NAV -->
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+      <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar"
+        style="position: relative; z-index: 980;">
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav">
+            <div class="uk-animation-toggle" tabindex="0">
+              <li><span uk-icon="icon: bookmark; ratio: 2" id="icon1"
+                  class="uk-align-left uk-animation-scale-up"></span></li>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+              <li><span uk-icon="icon: location; ratio: 2" id="icon2"
+                  class="uk-align-center uk-animation-scale-up"></span></li>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+              <li><span uk-icon="icon: user; ratio: 2" id="icon3" class="uk-align-right uk-animation-scale-up"></span>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <script type="text/javascript" src="./js/account.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 </body>
 
 </html>
