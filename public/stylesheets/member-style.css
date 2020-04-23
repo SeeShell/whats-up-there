@@ -1,25 +1,65 @@
-form.signup,
-form.login {
-    margin-top: 50px;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-#icon {
+#icon1 {
     margin: 10px;
+    padding-right: 50px;
+}
+
+#icon2 {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 60px;
+}
+
+#icon3 {
+    margin: 10px;
+    padding-right: 25px;
+}
+
+.uk-modal-dialog {
+    background-color: #303030da;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+#time {
+    font-size: 65px;
+}
+
+#favorite-city,
+#user {
+    font-weight: 300;
+}
+
+#user {
+    font-size: 30px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+#time,
+#city,
+#favorite-city {
+    font-size: 60px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 #navBar {
     background-color: #303030da !important;
     color: white !important;
-}
-
-.uk-card {
-    background-color: #303030da;
-    border-radius: 5px;
-}
-
-.uk-container {
-    background-color: #3030309a;
-    border-radius: 5px;
 }
 
 .uk-card-body {
@@ -30,15 +70,10 @@ form.login {
 .uk-button,
 .uk-heading-small {
     margin: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
     color: white;
 }
 
 .uk-button:hover {
     color: white;
-}
-
-body {
-    background: url('/public/imgs/space.png');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
