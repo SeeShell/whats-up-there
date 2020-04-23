@@ -113,6 +113,7 @@ $(document).ready(function() {
 });
 
 
+
 for (var i = 1; i < satellite.length; i++) {
     var mainDiv = $("<div class = 'uk-container'>");
     var markerLink = $(`<a href="#satellite${i}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 20%; top: 66%" href="#" uk-marker>
