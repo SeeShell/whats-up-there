@@ -2,9 +2,10 @@ $(document).ready(function() {
   function getUser() {
     $("#user").empty();
     $.get("/api/user_data").then(function(data) {
-      var user = $("<p>").text("Hello, World!");
+      var user = $("<p>");
       user.text(data.email);
       user.attr("data-id", data.id);
+      $("#user").append(user);
     });
   }
 
@@ -41,48 +42,6 @@ $(document).ready(function() {
       getFavorites();
     });
   });
-
-  var signUpForm = $("form#signup");
-  var passwordInput = $("input#password-input");
-  var passwordInput2 = $("input#password-input2");
-
-  // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function(event) {
-    event.preventDefault();
-    var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
-    };
-    if (!userData.password || !passwordInput2) {
-      return;
-    }
-
-    if (userData.password === passwordInput2) {
-      $("#alert .msg").text("Passwords do not match!");
-      $("#alert").fadeIn(500);
-      return;
-    }
-    changePassword(userData.email, userData.password);
-    passwordInput2.val("");
-    passwordInput.val("");
-  });
-
-  function changePassword(email, password) {
-    $.post("/api/signup", {
-      email: email,
-      password: password
-    })
-      .then(function() {
-        window.location.replace("/members");
-      })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
-
   getUser();
   getFavorites();
 });
