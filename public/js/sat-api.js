@@ -81,9 +81,10 @@ window.satApi = {
       }).then(result => {
         console.log(result.above);
         sendAnswers(result.above);
+        let sats = result.above;
+        getAboveHomePage(userLon, userLat, categoryID, sats);
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
-      getAboveHomePage(userLon, userLat, categoryID);
     });
   },
 
@@ -100,7 +101,7 @@ window.satApi = {
   }
 };
 
-function getAboveHomePage(userLon, userLat, categoryID) {
+function getAboveHomePage(userLon, userLat, categoryID, sats) {
   let searchRadius = 15;
   let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
   $(function() {
