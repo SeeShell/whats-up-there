@@ -161,9 +161,8 @@ function getAboveHomePage(userLon, userLat, categoryID) {
 
         <p id="satellite-${i + 1}-name" style="font-weight: bold;">
         ${aboveDataHome[i].satname}</p>
-        <p id="satellite-${i + 1}-launch">IDENTIFICATION : ${
-  aboveDataHome[i].satid
-}
+        <p id="satellite-${i + 1}-launch">IDENTIFICATION : 
+        ${aboveDataHome[i].satid}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
         <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
