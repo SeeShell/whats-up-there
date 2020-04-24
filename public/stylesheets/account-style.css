@@ -28,11 +28,18 @@ a {
   background-color: #303030;
   margin: 10px 50px;
   list-style-type: none;
+  border-radius: 5px;
+}
+
+.change-button {
+  background-color: #bb86fc;
+  border-color: #000000;
 }
 
 .delete-button {
   background-color: #bb86fc;
   border-color: #000000;
+  margin: auto;
 }
 
 .container {

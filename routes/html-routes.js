@@ -6,11 +6,8 @@ module.exports = function(app) {
     { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
     { stylesheet: "stylesheets/member-style.css" },
-<<<<<<< HEAD
+    { stylesheet: "stylesheets/map-style.css" },
     { stylesheet: "stylesheets/account-style.css" }
-=======
-    { stylesheet: "stylesheets/map-style.css" }
->>>>>>> 3fe62c61a8f3451642ec84e97bf0aa768292bc17
   ];
 
   app.get("/", function(req, res) {
@@ -36,6 +33,6 @@ module.exports = function(app) {
   });
 
   app.get("/account", isAuthenticated, function(req, res) {
-    res.render("account", styleArray[3]);
+    res.render("account", styleArray[4]);
   });
 };
