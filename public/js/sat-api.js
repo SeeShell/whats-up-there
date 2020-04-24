@@ -3,92 +3,92 @@ const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
 const satelliteIDArray = {
-    18: "Amateur radio",
-    35: "Beidou Navigation System",
-    1: "Brightest",
-    45: "Celestis",
-    32: "CubeSats",
-    8: "Disaster monitoring",
-    6: "Earth resources",
-    29: "Education",
-    28: "Engineering",
-    19: "Experimental",
-    48: "Flock",
-    22: "Galileo",
-    27: "Geodetic",
-    10: "Geostationary",
-    50: "GPS Constellation",
-    20: "GPS Operational",
-    17: "Globalstar",
-    51: "Glonass Constellation",
-    21: "Glonass Operational",
-    5: "GOES",
-    40: "Gonets",
-    12: "Gorizont",
-    11: "Intelsat",
-    15: "Iridium",
-    46: "IRNSS",
-    2: "ISS",
-    49: "Lemur",
-    30: "Military",
-    14: "Molniya",
-    24: "Navy Navigation Satellite System",
-    4: "NOAA",
-    43: "O3B Networks",
-    53: "OneWeb",
-    16: "Orbcomm",
-    38: "Parus",
-    47: "QZSS",
-    31: "Radar Calibration",
-    13: "Raduga",
-    25: "Russian LEO Navigation",
-    23: "Augmentation System",
-    7: "Search & Rescue",
-    26: "Space & Earth Science",
-    52: "Starlink",
-    39: "Strela",
-    9: "Tracking & Data Relay",
-    44: "Tselina",
-    42: "Tsikada",
-    41: "Tsiklon",
-    34: "TV",
-    3: "Weather",
-    37: "Westford Needles",
-    33: "XM and Sirius",
-    36: "Yaogan"
-}
+  18: "Amateur radio",
+  35: "Beidou Navigation System",
+  1: "Brightest",
+  45: "Celestis",
+  32: "CubeSats",
+  8: "Disaster monitoring",
+  6: "Earth resources",
+  29: "Education",
+  28: "Engineering",
+  19: "Experimental",
+  48: "Flock",
+  22: "Galileo",
+  27: "Geodetic",
+  10: "Geostationary",
+  50: "GPS Constellation",
+  20: "GPS Operational",
+  17: "Globalstar",
+  51: "Glonass Constellation",
+  21: "Glonass Operational",
+  5: "GOES",
+  40: "Gonets",
+  12: "Gorizont",
+  11: "Intelsat",
+  15: "Iridium",
+  46: "IRNSS",
+  2: "ISS",
+  49: "Lemur",
+  30: "Military",
+  14: "Molniya",
+  24: "Navy Navigation Satellite System",
+  4: "NOAA",
+  43: "O3B Networks",
+  53: "OneWeb",
+  16: "Orbcomm",
+  38: "Parus",
+  47: "QZSS",
+  31: "Radar Calibration",
+  13: "Raduga",
+  25: "Russian LEO Navigation",
+  23: "Augmentation System",
+  7: "Search & Rescue",
+  26: "Space & Earth Science",
+  52: "Starlink",
+  39: "Strela",
+  9: "Tracking & Data Relay",
+  44: "Tselina",
+  42: "Tsikada",
+  41: "Tsiklon",
+  34: "TV",
+  3: "Weather",
+  37: "Westford Needles",
+  33: "XM and Sirius",
+  36: "Yaogan"
+};
 
 window.satApi = {
-    getPosition: (userLon, userLat) => {
-        let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
-        $(function() {
-            $.ajax({
-                url: queryN2YO + positionQuery + apiKeyN2YO,
-                method: "GET"
-            }).then(result => {
-                // console.log(result);
-            });
-        });
-    },
+  getPosition: (userLon, userLat) => {
+    let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
+    $(function() {
+      $.ajax({
+        url: queryN2YO + positionQuery + apiKeyN2YO,
+        method: "GET"
+      }).then(result => {
+        console.log(result);
+      });
+    });
+  },
 
-    getAbove: (userLon, userLat, categoryID) => {
-        let searchRadius = 15;
-        let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
-        $(function() {
-            $.ajax({
-                url: queryN2YO + aboveQuery + apiKeyN2YO,
-                method: "GET"
-            }).then(result => {
-                // let aboveData = result.above.map(sat => {
-                //   return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
-                // });
-                const aboveData = result.above;
-                // console.log(aboveData.length);
-                // console.log(aboveData);
-                let points = "";
-                let pointGraphics = [];
-                for (let i = 0; i < aboveData.length; i++) {
-                    points += `
+  getAbove: (userLon, userLat, categoryID) => {
+    let searchRadius = 15;
+    let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
+    $(function() {
+      $.ajax({
+        url: queryN2YO + aboveQuery + apiKeyN2YO,
+        method: "GET"
+      }).then(result => {
+        // let aboveData = result.above.map(sat => {
+        //   return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
+        // });
+        const aboveData = result.above;
+        // console.log(aboveData.length);
+        // console.log(aboveData);
+        let points = "";
+        let pointGraphics = [];
+        for (let i = 0; i < aboveData.length; i++) {
+          points += `
           const point${i} = new Point({
             longitude: ${aboveData[i].satlng},
             latitude: ${aboveData[i].satlat}
@@ -97,9 +97,9 @@ window.satApi = {
             geometry: point${i},
             symbol: textSymbol
           });`;
-                    pointGraphics += `pointGraphic${i}, `;
-                }
-                let mapDisplayData = `require([
+          pointGraphics += `pointGraphic${i}, `;
+        }
+        let mapDisplayData = `require([
           "esri/Map",
           "esri/PopupTemplate",
           "esri/views/MapView",
@@ -127,56 +127,48 @@ window.satApi = {
           }
         };
         view.graphics.addMany([${pointGraphics}]);`;
-                // console.log(mapDisplayData);
-                return points;
-            });
-            getAboveHomePage(userLon, userLat, categoryID);
-        });
-    }
+        console.log(mapDisplayData);
+        return points;
+      });
+      getAboveHomePage(userLon, userLat, categoryID);
+    });
+  }
 };
 
-
-
 function getAboveHomePage(userLon, userLat, categoryID) {
-    let searchRadius = 15;
-    let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
-    $(function() {
-        $.ajax({
-            url: queryN2YO + aboveQuery + apiKeyN2YO,
-            method: "GET"
-        }).then(result => {
-            // let aboveData = result.above.map(sat => {
-            //   return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
-            // });
-            const aboveDataHome = result.above;
-            console.log(aboveDataHome)
+  let searchRadius = 15;
+  let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
+  $(function() {
+    $.ajax({
+      url: queryN2YO + aboveQuery + apiKeyN2YO,
+      method: "GET"
+    }).then(result => {
+      const aboveDataHome = result.above;
+      console.log(aboveDataHome);
 
-            for (let i = 0; i < aboveDataHome.length; i++) {
-
-                for (var key in satelliteIDArray) {
-                    if (key === categoryID) {
-                        console.log(key)
-                    }
-                }
-
-                var percentage1 = Math.floor(Math.random() * 21) + 20
-                var percentage2 = Math.floor(Math.random() * 21) + 20
-                var markerLink = `<a href="#satellite${i+1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: ${i+percentage1}%; top: ${i+percentage2}%" href="#" uk-marker>
+      for (let i = 0; i < aboveDataHome.length; i++) {
+        var percentage1 = Math.floor(Math.random() * 21) + 20;
+        var percentage2 = Math.floor(Math.random() * 21) + 20;
+        var markerLink = `<a href="#satellite${i +
+          1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: ${i +
+          percentage1}%; top: ${i + percentage2}%" href="#" uk-marker>
     <i class="fas fa-satellite"></i></a>
-    <div id="satellite${i+1}" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i+1}">
+    <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
+      1}">
         <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-        <p id="satellite-${i+1}-name" style="font-weight: bold;">${aboveDataHome[i].satname}</p>
-        <p id="satellite-${i+1}-launch">LAUNCH : ${aboveDataHome[i].launchDate}</p>
-        <p id="satellite-${i+1}-class">CLASSIFICATION : </p>
-        <a href="" id="sat-${i+1}" uk-icon="icon: bookmark; ratio: 2"></a>
-    </div>
-</div>`;
-
-                $("#aerial-image").append(markerLink);
-            }
-
-        });
-    })
+        <p id="satellite-${i + 1}-name" style="font-weight: bold;">${
+  aboveDataHome[i].satname
+}</p>
+        <p id="satellite-${i + 1}-launch">LAUNCH : ${
+  aboveDataHome[i].launchDate
+}</p>
+        <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
+        <a href="" id="sat-${i + 1}" uk-icon="icon: bookmark; ratio: 2"></a>
+        </div> </div>`;
+        $("#aerial-image").append(markerLink);
+      }
+    });
+  });
 }

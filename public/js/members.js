@@ -1,32 +1,32 @@
 window.navigator.geolocation.getCurrentPosition(logLocation);
 
 function logLocation(position) {
-    const userLon = position.coords.longitude;
-    const userLat = position.coords.latitude;
-    localStorage.setItem("userLon", userLon);
-    localStorage.setItem("userLat", userLat);
-    satApi.getAbove(userLon, userLat, 0).then(aboveData => {
-        satMap.renderPoints(aboveData);
-    });
+  const userLon = position.coords.longitude;
+  const userLat = position.coords.latitude;
+  localStorage.setItem("userLon", userLon);
+  localStorage.setItem("userLat", userLat);
+  satApi.getAbove(userLon, userLat, 0).then(aboveData => {
+    satMap.renderPoints(aboveData);
+  });
 }
 
 // CLOCK
 function showTime() {
-    var date = new Date();
-    var hr = date.getHours();
-    var min = date.getMinutes();
-    var sec = date.getSeconds();
+  var date = new Date();
+  var hr = date.getHours();
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
 
-    if (min < 10) {
-        min = "0" + min;
-    }
-    if (sec < 10) {
-        sec = "0" + sec;
-    }
+  if (min < 10) {
+    min = "0" + min;
+  }
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
 
-    var time = hr + ":" + min + ":" + sec;
-    document.getElementById("time").textContent = time;
-    setTimeout(showTime, 1000);
+  var time = hr + ":" + min + ":" + sec;
+  document.getElementById("time").textContent = time;
+  setTimeout(showTime, 1000);
 }
 
 showTime();
@@ -52,7 +52,7 @@ var select = $("select");
 var searchBtn = $("#searchBtn");
 
 searchBtn.on("click", function(event) {
-    event.preventDefault();
-    var selectedValue = select.val();
-    console.log(selectedValue);
+  event.preventDefault();
+  var selectedValue = select.val();
+  console.log(selectedValue);
 });
