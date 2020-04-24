@@ -27,7 +27,8 @@ a:hover {
     padding-top: 15px;
     padding-bottom: 0px;
     margin: 10px;
-    padding-right: 40px;
+    padding-right: 30px;
+    padding-left: 10px;
 }
 
 #sat-icon {
@@ -44,14 +45,21 @@ a:hover {
     padding-bottom: 0px;
     margin: 10px;
     padding-left: 10px;
-    padding-right: 40px;
+    padding-right: 30px;
+}
+
+#logout-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-right: 10px;
 }
 
 #user-icon {
     padding-top: 15px;
     padding-bottom: 0px;
     margin: 10px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .uk-modal-dialog {
