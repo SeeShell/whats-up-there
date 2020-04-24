@@ -32,6 +32,10 @@ module.exports = function(app) {
     res.render("members", styleArray[2]);
   });
 
+  app.get("/maps", isAuthenticated, function(req, res) {
+    res.render("map"), styleArray[3];
+  });
+
   app.get("/account", isAuthenticated, function(req, res) {
     res.render("account", styleArray[4]);
   });
