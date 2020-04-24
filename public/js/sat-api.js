@@ -146,6 +146,7 @@ function getAboveHomePage(userLon, userLat, categoryID) {
       url: queryN2YO + aboveQuery + apiKeyN2YO,
       method: "GET"
     }).then(result => {
+      $("#spinner").hide();
       const aboveDataHome = result.above;
       console.log(aboveDataHome);
 

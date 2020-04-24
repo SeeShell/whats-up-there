@@ -88,14 +88,25 @@ a {
 
 #time,
 #city,
-#favorite-city {
-    font-size: 60px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px;
-    margin: 0px;
+#favorite-city,
+#spinner {
+  font-size: 60px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px;
+  margin: 0px;
 }
+
+#favorite-city{
+  font-size: 60px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
 
 #navBar {
     background-color: #303030da !important;
@@ -115,5 +126,18 @@ a {
 }
 
 .uk-button:hover {
-    color: white;
+  color: white;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
