@@ -9,13 +9,13 @@ h3 {
     opacity: 0.95;
 }
 
+a {
+    color: #bb86fc;
+}
+
 a:hover {
     color: #bb86fc;
     text-decoration: none;
-}
-
-a {
-    color: white;
 }
 
 #bookmark-icon1 {
