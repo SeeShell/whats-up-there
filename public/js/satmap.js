@@ -55,10 +55,12 @@ function sendAnswers(data) {
   console.log(data);
   mapCoords = data;
   mapCoords.map(sat => {
-    
-  })
+    return {
+      latitude: sat.satlat,
+      longitude: sat.satlng
+    };
+  });
 }
-console.log(mapCoords);
 
 sendAnswers(1);
 //       .then(mapCoords => {
@@ -133,4 +135,3 @@ sendAnswers(1);
 //     // Add the graphics to the view's graphics layer
 //     view.graphics.addMany(pointGraphics);
 //   }
-// }

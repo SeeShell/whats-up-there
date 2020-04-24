@@ -83,7 +83,7 @@ window.satApi = {
         sendAnswers(result.above);
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
-      // getAboveHomePage(userLon, userLat, categoryID);
+      getAboveHomePage(userLon, userLat, categoryID);
     });
   },
 
