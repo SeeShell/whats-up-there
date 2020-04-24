@@ -1,5 +1,15 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+a:hover {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a {
+    color: white;
 }
 
 .uk-card {
