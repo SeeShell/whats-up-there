@@ -6,13 +6,14 @@ module.exports = function(app) {
     { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
     { stylesheet: "stylesheets/member-style.css" },
-    { stylesheet: "stylesheets/map-style.css" }
+    { stylesheet: "https://js.arcgis.com/4.15/esri/themes/light/main.css" },
+    { stylesheet: "stylesheets/account-style.css" }
   ];
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.render("members", styleArray[2]);
     }
     res.render("signup", styleArray[0]);
   });
@@ -20,7 +21,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.render("members", styleArray[2]);
     }
     res.render("login", styleArray[1]);
   });
@@ -29,5 +30,9 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members", styleArray[2]);
+  });
+
+  app.get("/account", isAuthenticated, function(req, res) {
+    res.render("account", styleArray[4]);
   });
 };
