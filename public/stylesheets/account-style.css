@@ -3,7 +3,12 @@
 }
 
 a {
+    color: white;
+}
+
+a:hover {
     color: #bb86fc;
+    text-decoration: none;
 }
 
 .uk-heading-medium,
@@ -66,39 +71,24 @@ form.login {
     color: white !important;
 }
 
-#bookmark-icon1 {
-    margin: 0px;
+#location-icon {
+    padding-top: 7px;
+    padding-bottom: 10px;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+#logout-icon {
+    padding-top: 7px;
+    padding-bottom: 10px;
+    margin: 20px;
     padding-right: 10px;
 }
 
-#bookmark-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-right: 40px;
-}
-
-#sat-icon {
-    padding-bottom: 0px;
-    padding-right: 40px;
-    padding-left: 10px;
-    padding-top: 25px;
-    font-size: 35px;
-    margin: 0px;
-}
-
-#location-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-left: 10px;
-    padding-right: 40px;
-}
-
 #user-icon {
-    padding-top: 15px;
-    margin: 10px;
+    padding-top: 7px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 20px;
+    padding-right: 30px;
 }

@@ -131,8 +131,7 @@ function getAboveHomePage(userLon, userLat, categoryID) {
         ${aboveDataHome[i].satid}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
-        <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
-        <a href="" id="sat${i}" uk-icon="icon: bookmark; ratio: 2"></a><br>
+        <a href="" id="sat${i}" uk-icon="icon: bookmark; ratio: 2"></a><br><br>
         <a href="/maps"> VIEW MAP</a>
         </div> </div>`;
         $("#satellite-display").append(markerLink);
