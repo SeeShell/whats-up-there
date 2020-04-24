@@ -23,4 +23,15 @@ module.exports = function(app) {
       });
     }
   });
+
+  // app.post("/api/user_favorites", function(req, res) {
+  //     db.Favorites.create({
+  //         satName: req.body.satName,
+  //         satID: req.body.satID,
+  //         nickname: req.body.nickname,
+  //         launchDate: req.body.launchDate
+  //     }).then(function() {
+  //         res.status(200);
+  //     });
+  // });
 };
