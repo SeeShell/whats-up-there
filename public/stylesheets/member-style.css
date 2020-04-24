@@ -48,7 +48,8 @@ body {
 
 #time,
 #city,
-#favorite-city {
+#favorite-city,
+#spinner {
   font-size: 60px;
   background-color: rgba(255, 192, 203, 0);
   text-align: center;
@@ -76,4 +77,17 @@ body {
 
 .uk-button:hover {
   color: white;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
