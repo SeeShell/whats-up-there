@@ -46,7 +46,7 @@ userLon = parseFloat(localStorage.getItem("userLon"));
 // const categoryID = 0;
 console.log(userLat, userLon);
 
-satApi.getAbove(userLon, userLat, 0, 15);
+satApi.getAbove(userLon, userLat, 0, 25);
 // .then(result => {
 //   console.log(result);
 // });
