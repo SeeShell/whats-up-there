@@ -59,104 +59,106 @@ const userAlt = 0;
 // };
 
 window.satApi = {
-  getPosition: (userLon, userLat) => {
-    let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
-    $(function() {
-      $.ajax({
-        url: queryN2YO + positionQuery + apiKeyN2YO,
-        method: "GET"
-      }).then(result => {
-        console.log(result);
-      });
-    });
-  },
+    getPosition: (userLon, userLat) => {
+        let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
+        $(function() {
+            $.ajax({
+                url: queryN2YO + positionQuery + apiKeyN2YO,
+                method: "GET"
+            }).then(result => {
+                console.log(result);
+            });
+        });
+    },
 
-  getAbove: (userLon, userLat, categoryID) => {
-    let searchRadius = 15;
-    let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
-    $(function() {
-      $.ajax({
-        url: queryN2YO + aboveQuery + apiKeyN2YO,
-        method: "GET"
-      }).then(result => {
-        console.log(result.above);
+    getAbove: (userLon, userLat, categoryID) => {
+        let searchRadius = 15;
+        let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
+        $(function() {
+            $.ajax({
+                url: queryN2YO + aboveQuery + apiKeyN2YO,
+                method: "GET"
+            }).then(result => {
+                console.log(result.above);
 
-        // let mapCoords = result.above.map(sat => {
-        //   return { latitude: sat.satlat, longitude: sat.satlng };
-        // });
-        // const aboveData = result.above;
-        // console.log(aboveData.length);
-        // console.log(aboveData);
-        // let points = "";
-        // let pointGraphics = [];
-        // for (let i = 0; i < aboveData.length; i++) {
-        //   points += `
-        //   const point${i} = new Point({
-        //     longitude: ${aboveData[i].satlng},
-        //     latitude: ${aboveData[i].satlat}
-        //   });
-        //   const pointGraphic${i} = new Graphic({
-        //     geometry: point${i},
-        //     symbol: textSymbol
-        //   });`;
-        //   pointGraphics += `pointGraphic${i}, `;
-        // }
-        // let mapDisplayData = `<script>require([
-        //   "esri/Map",
-        //   "esri/PopupTemplate",
-        //   "esri/views/MapView",
-        //   "esri/Graphic",
-        //   "esri/geometry/Point"
-        // ], function (Map, PopupTemplate, MapView, Graphic, Point) {
-        //   const map = new Map({
-        //     basemap: "satellite"
-        //   });
+                // let mapCoords = result.above.map(sat => {
+                //   return { latitude: sat.satlat, longitude: sat.satlng };
+                // });
+                // const aboveData = result.above;
+                // console.log(aboveData.length);
+                // console.log(aboveData);
+                // let points = "";
+                // let pointGraphics = [];
+                // for (let i = 0; i < aboveData.length; i++) {
+                //   points += `
+                //   const point${i} = new Point({
+                //     longitude: ${aboveData[i].satlng},
+                //     latitude: ${aboveData[i].satlat}
+                //   });
+                //   const pointGraphic${i} = new Graphic({
+                //     geometry: point${i},
+                //     symbol: textSymbol
+                //   });`;
+                //   pointGraphics += `pointGraphic${i}, `;
+                // }
+                // let mapDisplayData = `<script>require([
+                //   "esri/Map",
+                //   "esri/PopupTemplate",
+                //   "esri/views/MapView",
+                //   "esri/Graphic",
+                //   "esri/geometry/Point"
+                // ], function (Map, PopupTemplate, MapView, Graphic, Point) {
+                //   const map = new Map({
+                //     basemap: "satellite"
+                //   });
 
-        //   const view = new MapView({
-        //     center: [${userLon}, ${userLat}],
-        //     container: "viewDiv",
-        //     map: map,
-        //     zoom: 4
-        //   });
-        // ${points}
-        // const textSymbol = {
-        //   type: "text", // autocasts as new TextSymbol()
-        //   color: "#7A003C",
-        //   text: "\ue680",
-        //   font: {
-        //     size: 24,
-        //     family: "CalciteWebCoreIcons"
-        //   }
-        // };
-        // view.graphics.addMany([${pointGraphics}]);</script>`;
-        // console.log(mapDisplayData);
-        // $("#mapdata").text(mapDisplayData);
-        // return mapDisplayData;
-      });
-      getAboveHomePage(userLon, userLat, categoryID);
-    });
-  }
+                //   const view = new MapView({
+                //     center: [${userLon}, ${userLat}],
+                //     container: "viewDiv",
+                //     map: map,
+                //     zoom: 4
+                //   });
+                // ${points}
+                // const textSymbol = {
+                //   type: "text", // autocasts as new TextSymbol()
+                //   color: "#7A003C",
+                //   text: "\ue680",
+                //   font: {
+                //     size: 24,
+                //     family: "CalciteWebCoreIcons"
+                //   }
+                // };
+                // view.graphics.addMany([${pointGraphics}]);</script>`;
+                // console.log(mapDisplayData);
+                // $("#mapdata").text(mapDisplayData);
+                // return mapDisplayData;
+            });
+            getAboveHomePage(userLon, userLat, categoryID);
+        });
+    }
 };
 
 function getAboveHomePage(userLon, userLat, categoryID) {
-  let searchRadius = 15;
-  let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
-  $(function() {
-    $.ajax({
-      url: queryN2YO + aboveQuery + apiKeyN2YO,
-      method: "GET"
-    }).then(result => {
-      $("#spinner").hide();
-      const aboveDataHome = result.above;
-      console.log(aboveDataHome);
+    let searchRadius = 15;
+    let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
+    $(function() {
+        $.ajax({
+            url: queryN2YO + aboveQuery + apiKeyN2YO,
+            method: "GET"
+        }).then(result => {
+            $("#spinner").hide();
+            const aboveDataHome = result.above;
+            console.log(aboveDataHome);
 
-      for (let i = 0; i < aboveDataHome.length; i++) {
-        var percentage1 = Math.floor(Math.random() * 21) + 40;
-        var percentage2 = Math.floor(Math.random() * 21) + 20;
-        var markerLink = `<a href="#satellite${i +
+            for (let i = 0; i < aboveDataHome.length; i++) {
+                var percentage1 = Math.floor(Math.random() * 5);
+                var percentage2 = Math.floor(Math.random() * 90) + 5;
+                var add1 = Math.floor(Math.random() * 90) + 5;
+                var add2 = Math.floor(Math.random() * 5);
+                var markerLink = `<a href="#satellite${i +
           1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
-          ${i + percentage1 + 5}%; top: 
-          ${i + percentage2 + 5}%" href="#" uk-marker>
+          ${i + percentage1 + add1}%; top: 
+          ${i + percentage2 + add2}%" href="#" uk-marker>
     <i class="fas fa-satellite"></i></a>
     <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
@@ -169,22 +171,22 @@ function getAboveHomePage(userLon, userLat, categoryID) {
         ${aboveDataHome[i].satid}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
-        <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
         <a href="" id="sat${i}" uk-icon="icon: bookmark; ratio: 2"></a><br>
         <a href="/maps"> VIEW MAP</a>
         </div> </div>`;
-        $("#satellite-display").append(markerLink);
 
-        $("#sat" + i).on("click", function(event) {
-          $("#sat" + i).hide();
-          event.preventDefault();
-          satName = $("#satellite-" + i + "-name").text();
-          localStorage.setItem("favSat" + i, satName);
-          localStorage.getItem("favSat" + i);
-          var satFav = $("<p>").text(satName);
-          $("#fav-satellite").append(satFav);
+                $("#satellite-display").append(markerLink);
+
+                $("#sat" + i).on("click", function(event) {
+                    $("#sat" + i).hide();
+                    event.preventDefault();
+                    satName = $("#satellite-" + i + "-name").text();
+                    localStorage.setItem("favSat" + i, satName);
+                    localStorage.getItem("favSat" + i);
+                    var satFav = $("<p>").text(satName);
+                    $("#fav-satellite").append(satFav);
+                });
+            }
         });
-      }
     });
-  });
 }
