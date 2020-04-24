@@ -1,9 +1,8 @@
 {
   "parserOptions": {
     "ecmaVersion": 2017,
-    
-   "sourceType": "module"
-     
+
+    "sourceType": "module"
   },
   "env": {
     "es6": true,
@@ -25,7 +24,7 @@
     "eqeqeq": "error",
     "no-empty-function": "error",
     "no-multi-spaces": "error",
-    "no-unused-vars": "error",
+    // "no-unused-vars": "error",
     "camelcase": "error",
     "indent": ["error", 2],
     "quotes": ["error", "double"],
