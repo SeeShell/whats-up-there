@@ -1,94 +1,6 @@
+    <div class="uk-cover-container" uk-height-viewport id="aerial-image">
+        <img src="imgs/space.png" alt="" uk-cover>
 
-    <div class="uk-cover-container" uk-height-viewport>
-        <img src="imgs/space.png" alt="" uk-cover id="aerial-image">
-
-        <!-- MARKER ONE -->
-        <a href="#satellite1" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 20%; top: 66%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite1" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite1">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-1-name" style="font-weight: bold;"></p>
-                <p id="satellite-1-launch"></p>
-                <p id="satellite-1-class">CLASSIFICATION : RUSSIA </p>
-                <a href="" id="sat-1" uk-icon="icon: bookmark; ratio: 2"></a>
-            </div>
-        </div>
-
-        <!-- MARKER TWO -->
-        <a href="#satellite2" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite2" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite2">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-2-name" style="font-weight: bold;"></p>
-                <p id="satellite-2-launch">LAUNCHED : 1965</p>
-                <p id="satellite-2-class">CLASSIFICATION : USA </p>
-                <a href="" id="sat-2" uk-icon="icon: bookmark; ratio: 2"></a>
-
-            </div>
-        </div>
-
-        <!-- MARKER THREE -->
-        <a href="#satellite3" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite3" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite3">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-3-name" style="font-weight: bold;"></p>
-                <p id="satellite-3-launch">LAUNCHED : 1975</p>
-                <p id="satellite-3-class">CLASSIFICATION : PHONE </p>
-                <a href="" id="sat-3" uk-icon="icon: bookmark; ratio: 2"></a>
-            </div>
-        </div>
-
-
-        <!-- MARKER FOUR -->
-        <a href="#satellite4" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 80%; top: 50%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite4" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite4">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-                <p id="satellite-4-name" style="font-weight: bold;"></p>
-                <p id="satellite-4-launch">LAUNCHED : 1988</p>
-                <p id="satellite-4-class">CLASSIFICATION : TELEVISION </p>
-                <a href="" id="sat-4" uk-icon="icon: bookmark; ratio: 2"></a>
-            </div>
-        </div>
-
-
-        <!-- MARKER FIVE -->
-        <a href="#satellite5" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 45%; top: 50%" href="#" uk-marker>
-            <i class="fas fa-satellite"></i>
-        </a>
-
-        <div id="satellite5" class="uk-flex-top" uk-modal>
-            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite5">
-                <button class="uk-modal-close-outside" type="button" uk-close></button>
-
-
-                <p id="satellite-5-name" style="font-weight: bold;"></p>
-                <p id="satellite-5-launch">LAUNCHED : 1991</p>
-                <p id="satellite-5-class">CLASSIFICATION : RADIO </p>
-                <a href="" id="sat-5" uk-icon="icon: bookmark; ratio: 2"></a>
-
-
-            </div>
-        </div>
-
-        <!-- TOP NAV -->
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: #transparent-sticky-navbar">
             <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
                 <div class="uk-navbar-center">
@@ -101,7 +13,7 @@
             </nav>
         </div>
 
-        <!--USER DASHBOARD -->
+
         <div class="uk-align-center">
             <div class="uk-align-center uk-card uk-card-default uk-card-body" id="favorite-city">
             </div>
@@ -109,13 +21,13 @@
             </div>
         </div>
 
-        <!-- BOTTOM NAV -->
+  
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
             <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
 
-                        <!-- BOOKMARKED -->
+ 
                         <div class="uk-animation-toggle" tabindex="0">
                             <li><span uk-icon="icon: bookmark; ratio: 2" id="bookmark-icon" class="uk-align-left uk-animation-scale-up" uk-toggle="target: #offcanvas-slide"></span></li>
                         </div>
@@ -124,23 +36,23 @@
 
                                 <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                                <!-- FAVORITE SATELLITES POP OUT -->
+                             
                                 <h3>Bookmarks</h3>
-                                <!-- FAVORITE ONE -->
+                                
                                 <p id="fav-sat-1"></p>
-                                <!-- FAVORITE TWO -->
+                             
                                 <p id="fav-sat-2"></p>
-                                <!-- FAVORITE THREE -->
+                                
                                 <p id="fav-sat-3"></p>
-                                <!-- FAVORITE FOUR -->
+                                
                                 <p id="fav-sat-4"></p>
-                                <!-- FAVORITE FIVE -->
+                        
                                 <p id="fav-sat-5"></p>
 
                             </div>
                         </div>
 
-                        <!-- SATELITTLES ABOVE CATEGORIES -->
+         
                         <div class="uk-animation-toggle" tabindex="0">
                             <li><span uk-icon="ratio: 2" id="sat-icon" href="#satellite-categories" uk-toggle> <i href="#satellite-categories" class="fas fa-satellite uk-align-center uk-animation-scale-up"></i></span></li>
 
@@ -194,12 +106,12 @@
                             </div>
                         </div>
 
-                        <!-- LOCATION -->
+   
                         <div class="uk-animation-toggle" tabindex="0">
                             <li><span href="/" uk-icon="icon: location; ratio: 2" id="location-icon" class="uk-align-center uk-animation-scale-up"></span></li>
                         </div>
 
-                        <!-- ACCOUNT -->
+                 
                         <div class="uk-animation-toggle" tabindex="0">
                             <li><span href="/account" uk-icon="icon: user; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></span></li>
                         </div>
@@ -210,11 +122,11 @@
 
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-    <script type="text/javascript" src="./js/members.js"></script>
     <script type="text/javascript" src="./js/sat-api.js"></script>
+    <script type="text/javascript" src="./js/members.js"></script>
