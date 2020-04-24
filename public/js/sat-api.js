@@ -71,7 +71,7 @@ window.satApi = {
           }
         };
         view.graphics.addMany([${pointGraphics}]);`;
-        console.log(mapDisplayData);
+        // console.log(mapDisplayData);
         return points, mapDisplayData;
       });
     });
