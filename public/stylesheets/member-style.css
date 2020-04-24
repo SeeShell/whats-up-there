@@ -73,6 +73,10 @@ a {
     font-weight: 300;
 }
 
+#satellite-display {
+    background-color: rgba(255, 192, 203, 0);
+}
+
 #user {
     font-size: 30px;
     background-color: rgba(255, 192, 203, 0);

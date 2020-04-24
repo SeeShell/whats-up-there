@@ -35,19 +35,6 @@ showTime();
 var city = $("<p>").text("SAN DIEGO");
 $("#favorite-city").append(city);
 
-//SAT TO FAVORITES
-// var Fav = $("#sat-1");
-// sat1.on("click", function(event) {
-//     $("#sat-1").hide();
-//     event.preventDefault();
-//     sat1name = $("#satellite-1-name").text();
-//     localStorage.setItem("favSat1", sat1name);
-//     localStorage.getItem("favSat1");
-//     $("#fav-sat-1").append(sat1name);
-// });
-
-// Getting references to our form and input
-
 var select = $("select");
 var searchBtn = $("#searchBtn");
 
@@ -56,3 +43,38 @@ searchBtn.on("click", function(event) {
   var selectedValue = select.val();
   console.log(selectedValue);
 });
+
+// $("#bookmark-icon").on("click", function(event) {
+//     event.preventDefault();
+//     getFavorites();
+// });
+
+// function getFavorites() {
+//     $("#list").empty();
+//     $.get("/api/user_favorites").then(function(data) {
+//         for (let i = 0; i < data.length; i++) {
+//             var list = $("<li>");
+//             list.html(
+//                 `
+//             <a class="uk-accordion-title uk-text-center" data-id='1' href="#" style="font size=20px;">${data[i].satName}</a>
+//             <div class="uk-accordion-content">
+//               <p class="uk-text-left uk-align-center" style="font size=15px; font-weight:300;">ID: ${data[i].satID}</p>
+//               <p class="uk-text-left uk-align-center" style="font size=15px; font-weight:300">Launch Date: ${data[i].launchDate}</p>
+//             </div>
+//             `
+//             );
+//             list.attr("data-id", data[i].id);
+//             $("#fav-satellite").append(list);
+//         }
+//     });
+// }
+
+// $("#favoriteChoice").on("click", function(event) {
+//     event.preventDefault();
+//     var satChoice = $(this);
+//     console.log(satChoice)
+//         // $.post("/api/user_favorites", Post, function() {
+//         //         .data("post");
+//         //     window.location.href = "/members";
+//         // });
+// });

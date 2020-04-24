@@ -147,11 +147,12 @@ function getAboveHomePage(userLon, userLat, categoryID) {
       console.log(aboveDataHome);
 
       for (let i = 0; i < aboveDataHome.length; i++) {
-        var percentage1 = Math.floor(Math.random() * 21) + 20;
+        var percentage1 = Math.floor(Math.random() * 21) + 40;
         var percentage2 = Math.floor(Math.random() * 21) + 20;
         var markerLink = `<a href="#satellite${i +
-          1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: ${i +
-          percentage1}%; top: ${i + percentage2}%" href="#" uk-marker>
+          1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
+          ${i + percentage1 + 5}%; top: 
+          ${i + percentage2 + 5}%" href="#" uk-marker>
     <i class="fas fa-satellite"></i></a>
     <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
@@ -160,12 +161,26 @@ function getAboveHomePage(userLon, userLat, categoryID) {
 
         <p id="satellite-${i + 1}-name" style="font-weight: bold;">
         ${aboveDataHome[i].satname}</p>
+        <p id="satellite-${i + 1}-launch">IDENTIFICATION : ${
+  aboveDataHome[i].satid
+}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
         <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
-        <a href="" id="sat-${i + 1}" uk-icon="icon: bookmark; ratio: 2"></a>
+        <a href="" id="sat${i}" uk-icon="icon: bookmark; ratio: 2"></a><br>
+        <a href="/map"> VIEW MAP</a>
         </div> </div>`;
-        $("#aerial-image").append(markerLink);
+        $("#satellite-display").append(markerLink);
+
+        $("#sat" + i).on("click", function(event) {
+          $("#sat" + i).hide();
+          event.preventDefault();
+          satName = $("#satellite-" + i + "-name").text();
+          localStorage.setItem("favSat" + i, satName);
+          localStorage.getItem("favSat" + i);
+          var satFav = $("<p>").text(satName);
+          $("#fav-satellite").append(satFav);
+        });
       }
     });
   });
