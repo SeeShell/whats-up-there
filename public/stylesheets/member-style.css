@@ -1,79 +1,119 @@
-body {
-  font-family: "Roboto Condensed", sans-serif;
+body,
+h3 {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-#icon1 {
-  margin: 10px;
-  padding-right: 50px;
+.uk-offcanvas-bar {
+    background-color: #303030e1;
+    opacity: 0.95;
 }
 
-#icon2 {
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 60px;
+a:hover {
+    color: #bb86fc;
+    text-decoration: none;
 }
 
-#icon3 {
-  margin: 10px;
-  padding-right: 25px;
+a {
+    color: white;
+}
+
+#bookmark-icon1 {
+    margin: 0px;
+    padding-right: 10px;
+}
+
+#bookmark-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-right: 40px;
+}
+
+#sat-icon {
+    padding-bottom: 0px;
+    padding-right: 40px;
+    padding-left: 10px;
+    padding-top: 25px;
+    font-size: 35px;
+    margin: 0px;
+}
+
+#location-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+#user-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-right: 10px;
 }
 
 .uk-modal-dialog {
-  background-color: #303030da;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-  text-align: center;
+    background-color: #303030e1;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
 }
 
 #time {
-  font-size: 65px;
+    font-size: 65px;
 }
 
 #favorite-city,
 #user {
-  font-weight: 300;
+    font-weight: 300;
+}
+
+#satellite-display {
+    background-color: rgba(255, 192, 203, 0);
 }
 
 #user {
-  font-size: 30px;
-  background-color: rgba(255, 192, 203, 0);
-  text-align: center;
-  color: white;
-  padding: 0px;
-  margin: 0px;
+    font-size: 30px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 #time,
 #city,
 #favorite-city {
-  font-size: 60px;
-  background-color: rgba(255, 192, 203, 0);
-  text-align: center;
-  color: white;
-  padding: 0px;
-  margin: 0px;
+    font-size: 60px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 #navBar {
-  background-color: #303030da !important;
-  color: white !important;
+    background-color: #303030da !important;
+    color: white !important;
 }
 
 .uk-card-body {
-  margin: auto;
+    margin: auto;
 }
 
 .uk-heading-medium,
 .uk-button,
 .uk-heading-small {
-  margin: 10px;
-  font-family: "Roboto Condensed", sans-serif;
-  color: white;
+    margin: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: white;
 }
 
 .uk-button:hover {
-  color: white;
+    color: white;
 }

@@ -1,31 +1,48 @@
-#login-link {
+body {
+    font-family: 'Roboto Condensed', sans-serif;
     color: white;
+}
+
+a:hover {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+#signuptitle {
+    font-size: 35px;
+    padding-top: 0px;
 }
 
 a {
-    color: #bb86fc;
-}
-
-.uk-heading-medium {
-    margin-top: 10px;
-    text-align: center;
     color: white;
 }
 
-.uk-container {
-    background-color: #303030;
+.uk-card {
+    background-color: #303030da;
     border-radius: 5px;
 }
 
-.uk-container>:last-child {
-    margin-bottom: 20px;
+.uk-container {
+    background-color: #303030da;
+    border-radius: 5px;
 }
 
 .uk-card-body {
     margin: auto;
 }
 
-form.signup,
-form.login {
-    margin-top: 50px;
+.uk-heading-medium {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.uk-heading-medium,
+.uk-button {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: auto;
+    color: white;
+}
+
+.uk-button:hover {
+    color: white;
 }
