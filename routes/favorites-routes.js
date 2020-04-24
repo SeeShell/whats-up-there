@@ -24,6 +24,16 @@ module.exports = function(app) {
     }
   });
 
+  app.delete("/api/user_favorites/:id", (req, res) => {
+    db.Favorites.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
   // app.post("/api/user_favorites", function(req, res) {
   //     db.Favorites.create({
   //         satName: req.body.satName,
