@@ -15,10 +15,10 @@ $(document).ready(function() {
     list.html(
       `
       <a class="uk-accordion-title uk-text-left" href="#">Steve</a>
-        <div class="uk-accordion-content">
-          <p class="uk-text-center">10, satty 1, 02-24-2020</p>
-          <button class='uk-button delete-button '>remove</button>
-        </div>
+      <div class="uk-accordion-content">
+        <p class="uk-text-center">10, satty 1, 02-24-2020</p>
+        <button class='uk-button delete-button '>remove</button>
+      </div>
       `
     );
     list.attr("data-id", "1");

@@ -6,7 +6,11 @@ module.exports = function(app) {
     { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
     { stylesheet: "stylesheets/member-style.css" },
+<<<<<<< HEAD
     { stylesheet: "stylesheets/account-style.css" }
+=======
+    { stylesheet: "stylesheets/map-style.css" }
+>>>>>>> 3fe62c61a8f3451642ec84e97bf0aa768292bc17
   ];
 
   app.get("/", function(req, res) {
