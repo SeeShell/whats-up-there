@@ -88,7 +88,6 @@ a {
 
 #time,
 #city,
-<<<<<<< HEAD
 #favorite-city,
 #spinner {
   font-size: 60px;
@@ -97,15 +96,6 @@ a {
   color: white;
   padding: 0px;
   margin: 0px;
-=======
-#favorite-city {
-    font-size: 60px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px;
-    margin: 0px;
->>>>>>> 1a4d6b7bfc24aca9230e4240f83383dabed3ccbd
 }
 
 #navBar {
@@ -126,7 +116,6 @@ a {
 }
 
 .uk-button:hover {
-<<<<<<< HEAD
   color: white;
 }
 
@@ -141,7 +130,4 @@ a {
   to {
     transform: rotate(359deg);
   }
-=======
-    color: white;
->>>>>>> 1a4d6b7bfc24aca9230e4240f83383dabed3ccbd
 }
