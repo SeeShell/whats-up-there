@@ -2,61 +2,61 @@ const queryN2YO = "https://www.n2yo.com/rest/v1/satellite/";
 const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
-const satelliteIDArray = {
-  18: "Amateur radio",
-  35: "Beidou Navigation System",
-  1: "Brightest",
-  45: "Celestis",
-  32: "CubeSats",
-  8: "Disaster monitoring",
-  6: "Earth resources",
-  29: "Education",
-  28: "Engineering",
-  19: "Experimental",
-  48: "Flock",
-  22: "Galileo",
-  27: "Geodetic",
-  10: "Geostationary",
-  50: "GPS Constellation",
-  20: "GPS Operational",
-  17: "Globalstar",
-  51: "Glonass Constellation",
-  21: "Glonass Operational",
-  5: "GOES",
-  40: "Gonets",
-  12: "Gorizont",
-  11: "Intelsat",
-  15: "Iridium",
-  46: "IRNSS",
-  2: "ISS",
-  49: "Lemur",
-  30: "Military",
-  14: "Molniya",
-  24: "Navy Navigation Satellite System",
-  4: "NOAA",
-  43: "O3B Networks",
-  53: "OneWeb",
-  16: "Orbcomm",
-  38: "Parus",
-  47: "QZSS",
-  31: "Radar Calibration",
-  13: "Raduga",
-  25: "Russian LEO Navigation",
-  23: "Augmentation System",
-  7: "Search & Rescue",
-  26: "Space & Earth Science",
-  52: "Starlink",
-  39: "Strela",
-  9: "Tracking & Data Relay",
-  44: "Tselina",
-  42: "Tsikada",
-  41: "Tsiklon",
-  34: "TV",
-  3: "Weather",
-  37: "Westford Needles",
-  33: "XM and Sirius",
-  36: "Yaogan"
-};
+// const satelliteIDArray = {
+//   18: "Amateur radio",
+//   35: "Beidou Navigation System",
+//   1: "Brightest",
+//   45: "Celestis",
+//   32: "CubeSats",
+//   8: "Disaster monitoring",
+//   6: "Earth resources",
+//   29: "Education",
+//   28: "Engineering",
+//   19: "Experimental",
+//   48: "Flock",
+//   22: "Galileo",
+//   27: "Geodetic",
+//   10: "Geostationary",
+//   50: "GPS Constellation",
+//   20: "GPS Operational",
+//   17: "Globalstar",
+//   51: "Glonass Constellation",
+//   21: "Glonass Operational",
+//   5: "GOES",
+//   40: "Gonets",
+//   12: "Gorizont",
+//   11: "Intelsat",
+//   15: "Iridium",
+//   46: "IRNSS",
+//   2: "ISS",
+//   49: "Lemur",
+//   30: "Military",
+//   14: "Molniya",
+//   24: "Navy Navigation Satellite System",
+//   4: "NOAA",
+//   43: "O3B Networks",
+//   53: "OneWeb",
+//   16: "Orbcomm",
+//   38: "Parus",
+//   47: "QZSS",
+//   31: "Radar Calibration",
+//   13: "Raduga",
+//   25: "Russian LEO Navigation",
+//   23: "Augmentation System",
+//   7: "Search & Rescue",
+//   26: "Space & Earth Science",
+//   52: "Starlink",
+//   39: "Strela",
+//   9: "Tracking & Data Relay",
+//   44: "Tselina",
+//   42: "Tsikada",
+//   41: "Tsiklon",
+//   34: "TV",
+//   3: "Weather",
+//   37: "Westford Needles",
+//   33: "XM and Sirius",
+//   36: "Yaogan"
+// };
 
 window.satApi = {
   getPosition: (userLon, userLat) => {
@@ -158,12 +158,10 @@ function getAboveHomePage(userLon, userLat, categoryID) {
       1}">
         <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-        <p id="satellite-${i + 1}-name" style="font-weight: bold;">${
-  aboveDataHome[i].satname
-}</p>
-        <p id="satellite-${i + 1}-launch">LAUNCH : ${
-  aboveDataHome[i].launchDate
-}</p>
+        <p id="satellite-${i + 1}-name" style="font-weight: bold;">
+        ${aboveDataHome[i].satname}</p>
+        <p id="satellite-${i + 1}-launch">LAUNCH : 
+        ${aboveDataHome[i].launchDate}</p>
         <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
         <a href="" id="sat-${i + 1}" uk-icon="icon: bookmark; ratio: 2"></a>
         </div> </div>`;
