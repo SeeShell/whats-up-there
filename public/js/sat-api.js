@@ -43,7 +43,7 @@ window.satApi = {
           });`;
           pointGraphics += `pointGraphic${i}, `;
         }
-        let mapDisplayData = `require([
+        let mapDisplayData = `<script>require([
           "esri/Map",
           "esri/PopupTemplate",
           "esri/views/MapView",
@@ -70,9 +70,10 @@ window.satApi = {
             family: "CalciteWebCoreIcons"
           }
         };
-        view.graphics.addMany([${pointGraphics}]);`;
+        view.graphics.addMany([${pointGraphics}]);</script>`;
         console.log(mapDisplayData);
-        return points;
+        $("#mapdata").text(mapDisplayData);
+        return mapDisplayData;
       });
     });
   }
