@@ -14,10 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    launchDate: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     nickname: {
       type: DataTypes.STRING,
       allowNull: false,

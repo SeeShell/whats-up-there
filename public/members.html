@@ -24,9 +24,10 @@
             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite1">
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-                <p id="satellite-1" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : TELEVISION <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
+                <p id="satellite-1-name" style="font-weight: bold;"></p>
+                <p id="satellite-1-launch"></p>
+                <p id="satellite-1-class">CLASSIFICATION : RUSSIA </p>
+                <a href="" id="sat-1" uk-icon="icon: bookmark; ratio: 2"></a>
             </div>
         </div>
 
@@ -39,10 +40,10 @@
             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite2">
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-                <p id="satellite-2" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945
-                <br> CLASSIFICATION : PHONE <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
+                <p id="satellite-2-name" style="font-weight: bold;"></p>
+                <p id="satellite-2-launch">LAUNCHED : 1965</p>
+                <p id="satellite-2-class">CLASSIFICATION : USA </p>
+                <a href="" id="sat-2" uk-icon="icon: bookmark; ratio: 2"></a>
 
             </div>
         </div>
@@ -56,10 +57,10 @@
             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite3">
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-                <p id="satellite-3" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : USA <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
-
+                <p id="satellite-3-name" style="font-weight: bold;"></p>
+                <p id="satellite-3-launch">LAUNCHED : 1975</p>
+                <p id="satellite-3-class">CLASSIFICATION : PHONE </p>
+                <a href="" id="sat-3" uk-icon="icon: bookmark; ratio: 2"></a>
             </div>
         </div>
 
@@ -73,10 +74,10 @@
             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite4">
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-                <p id="satellite-4" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945
-                <br> CLASSIFICATION : CHINA <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
+                <p id="satellite-4-name" style="font-weight: bold;"></p>
+                <p id="satellite-4-launch">LAUNCHED : 1988</p>
+                <p id="satellite-4-class">CLASSIFICATION : TELEVISION </p>
+                <a href="" id="sat-4" uk-icon="icon: bookmark; ratio: 2"></a>
             </div>
         </div>
 
@@ -91,9 +92,10 @@
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
 
 
-                <p id="satellite-5" style="font-weight: bold;">SATELLITE BABY
-                </p> LAUNCHED : 1945<br> CLASSIFICATION : RUSSIAN <br><br>
-                <a href="" uk-icon="icon: bookmark; ratio: 2"></a>
+                <p id="satellite-5-name" style="font-weight: bold;"></p>
+                <p id="satellite-5-launch">LAUNCHED : 1991</p>
+                <p id="satellite-5-class">CLASSIFICATION : RADIO </p>
+                <a href="" id="sat-5" uk-icon="icon: bookmark; ratio: 2"></a>
 
 
             </div>
@@ -114,27 +116,110 @@
 
         <!--USER DASHBOARD -->
         <div class="uk-align-center">
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="user">
-            </div>
             <div class="uk-align-center uk-card uk-card-default uk-card-body" id="favorite-city">
             </div>
             <div class="uk-align-center uk-card uk-card-default uk-card-body" id="time">
             </div>
         </div>
 
+
         <!-- BOTTOM NAV -->
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
             <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
+
+                        <!-- BOOKMARKED -->
                         <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: bookmark; ratio: 2" id="icon1" class="uk-align-left uk-animation-scale-up"></span></li>
+                            <li><span uk-icon="icon: bookmark; ratio: 2" id="bookmark-icon" class="uk-align-left uk-animation-scale-up" uk-toggle="target: #offcanvas-slide"></span></li>
                         </div>
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: location; ratio: 2" id="icon2" class="uk-align-center uk-animation-scale-up"></span></li>
+                        <div id="offcanvas-slide" uk-offcanvas="mode: slide; overlay: true">
+                            <div class="uk-offcanvas-bar">
+
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                                <!-- FAVORITE SATELLITES POP OUT -->
+                                <h3>Bookmarks</h3>
+                                <!-- FAVORITE ONE -->
+                                <!-- <div class="uk-margin">
+                                    <input class="uk-input uk-light uk-form-width-medium" type="text" placeholder="Default">
+                                </div> -->
+                                <!-- FAVORITE TWO -->
+                                <p id="fav-sat-2"></p>
+                                <!-- FAVORITE THREE -->
+                                <p id="fav-sat-3"></p>
+                                <!-- FAVORITE FOUR -->
+                                <p id="fav-sat-4"></p>
+                                <!-- FAVORITE FIVE -->
+                                <p id="fav-sat-5"></p>
+
+                            </div>
                         </div>
+
+
+                        <!-- SATELITTLES ABOVE CATEGORIES -->
                         <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: user; ratio: 2" id="icon3" class="uk-align-right uk-animation-scale-up"></span></li>
+                            <li><span uk-icon="ratio: 2" id="sat-icon" href="#satellite-categories" uk-toggle> <i href="#satellite-categories" class="fas fa-satellite uk-align-center uk-animation-scale-up"></i></span></li>
+
+
+                            <div id="satellite-categories" class="uk-flex-top" uk-modal>
+                                <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+
+                                    <button class="uk-modal-close-outside" type="button" uk-close></button>
+
+
+                                    <form>
+                                        <div class="uk-margin">
+                                            <div uk-form-custom="target: > * > span:first-child">
+                                                <p>CATEGORIES</p>
+                                                <select name="satelliteCat" id="categories">
+                                                <option selected="selected" id="select" value="">Please select...</option>
+                                                <option id= "18" value="18">AMATEUR RADIO </option>
+                                                <option id= "6" value="6">EARTH RESOURCES</option>
+                                                <option id= "29" value="29">EDUCATION</option>
+                                                <option id= "19" value="19">EXPERIMENTAL</option>
+                                                <option id= "22" value="22">GALILEO</option>
+                                                <option id= "20" value="20">GLOBAL POSITIONING SYSTEM (GPS)</option>
+                                                <option id= "11" value="11">INTELSAT</option>
+                                                <option id= "2" value="2">ISS</option>
+                                                <option id= "30" value="30">MILITARY</option>
+                                                <option id= "18" value="18">NAVY NAVIGATION SATELLITE SYSTEM</option>
+                                                <option id= "4" value="4">NOAA</option>
+                                                <option id= "31" value="31">RADAR CALIBRATION</option>
+                                                <option id= "7" value="7">SEARCH & RESCUE</option>
+                                                <option id= "26" value="26">SPACE & EARTH SCIENCE</option>
+                                                <option id= "52" value="52">STARLINK</option>
+                                                <option id= "9" value="9">TRACKING AND DATA RELAY SATELLITE SYSTEM</option>
+                                                <option id= "34" value="34">TV</option>
+                                                <option id= "3" value="3">WEATHER</option>
+                                                <option id= "33" value="33">XM AND SIRIUS</option>
+                                            </select>
+
+                                                <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
+                                                <span></span>
+                                                <span uk-icon="icon: chevron-down"></span>
+                                            </button>
+                                    </form>
+                                    </div>
+                                    <br>
+                                    </div>
+
+                                    <button class="uk-button uk-button-default" id="searchBtn" type="submit">SEARCH</button>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- LOCATION -->
+                        <div class="uk-animation-toggle" tabindex="0">
+                            <li><span href="/" uk-icon="icon: location; ratio: 2" id="location-icon" class="uk-align-center uk-animation-scale-up"></span></li>
+                        </div>
+
+                        <!-- ACCOUNT -->
+                        <div class="uk-animation-toggle" tabindex="0">
+                            <li><span href="/account" uk-icon="icon: user; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></span></li>
                         </div>
                     </ul>
                 </div>
@@ -148,8 +233,9 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <script type="text/javascript" src="./js/members.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script type="text/javascript" src="./js/members.js"></script>
+    <script type="text/javascript" src="./js/sat-api.js"></script>
 </body>
 
 </html>

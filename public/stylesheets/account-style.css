@@ -1,9 +1,9 @@
 #login-link {
-  color: white;
+    color: white;
 }
 
 a {
-  color: #bb86fc;
+    color: #bb86fc;
 }
 
 .uk-heading-medium,
@@ -15,52 +15,89 @@ a {
 }
 
 #user {
-  font-size: 30px;
-  background-color: rgba(255, 192, 203, 0);
-  text-align: center;
-  color: white;
-  padding: 0px;
-  margin: 0px;
+    font-size: 30px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
-#favorites-list, #favorites-list a {
-  color: white;
-  background-color: #303030;
-  margin: 10px 50px;
-  list-style-type: none;
-  border-radius: 5px;
+#favorites-list,
+#favorites-list a {
+    color: white;
+    background-color: #303030;
+    margin: 10px 50px;
+    list-style-type: none;
+    border-radius: 5px;
 }
 
 .change-button {
-  background-color: #bb86fc;
-  border-color: #000000;
+    background-color: #bb86fc;
+    border-color: #000000;
 }
 
 .delete-button {
-  background-color: #bb86fc;
-  border-color: #000000;
-  margin: auto;
+    background-color: #bb86fc;
+    border-color: #000000;
+    margin: auto;
 }
 
 .container {
-  background-color: #303030;
-  border-radius: 5px;
+    background-color: #303030;
+    border-radius: 5px;
 }
 
 .uk-container>:last-child {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .uk-card-body {
-  margin: auto;
+    margin: auto;
 }
 
 form.signup,
 form.login {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 #navBar {
-  background-color: #303030da !important;
-  color: white !important;
+    background-color: #303030da !important;
+    color: white !important;
+}
+
+#bookmark-icon1 {
+    margin: 0px;
+    padding-right: 10px;
+}
+
+#bookmark-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-right: 40px;
+}
+
+#sat-icon {
+    padding-bottom: 0px;
+    padding-right: 40px;
+    padding-left: 10px;
+    padding-top: 25px;
+    font-size: 35px;
+    margin: 0px;
+}
+
+#location-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+#user-icon {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    padding-right: 10px;
 }

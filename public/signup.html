@@ -19,12 +19,13 @@
     <div class="uk-container uk-position-center">
         <div>
 
-            <h1 class="uk-heading-medium">what's up there</h1>
+            <h1 class="uk-heading-medium uk-align-center">what's up there?</h1>
 
             <div class="uk-card uk-grid-collapse uk-box-shadow-xlarge uk-margin uk-grid">
                 <div class="uk-card-body uk-align-center">
 
-                    <form class="uk-align-center" id="login">
+                    <form id="signup" style="text-align: center;">
+                        <h3 class="uk-heading-medium uk-align-center" id="signuptitle">sign up and find out</h3>
                         <div class="uk-margin uk-align-center ">
                             <div class="uk-inline ">
                                 <span class="uk-form-icon " uk-icon="icon: user "></span>
@@ -34,14 +35,15 @@
                         <div class="uk-margin uk-align-center ">
                             <div class="uk-inline ">
                                 <span class="uk-form-icon uk-form " uk-icon="icon: lock "></span>
-                                <input class="uk-input " id="password-input" type="text" placeholder="PASSWORD">
+                                <input class="uk-input " id="password-input" type="password" placeholder="PASSWORD">
                             </div>
                         </div>
+                        <div style="display: none; margin-bottom: 20px;" id="alert" class="alert uk-alert-dange" role="alert">
+                            <span class="sr-only">This e-mail has already been up there! <a href="/login">login here.</a></span> <span class=""></span>
+                        </div>
+                        <button class="uk-button uk-align-center uk-button-default">SIGN ME UP, SCOTTY</button>
 
-                        <button class="uk-button uk-align-center uk-button-default ">LET'S GO UP THERE</button>
-                        <br>
-                        <button class="uk-button uk-align-center uk-button-default ">SIGN ME UP</button>
-
+                        <p id="login-link">Already been up there? <a href="/login"> let's go back.</a></p>
                     </form>
                 </div>
             </div>
@@ -50,8 +52,8 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-    <script type="text/javascript " src="js/signup.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script type="text/javascript" src="js/signup.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 
 </html>
