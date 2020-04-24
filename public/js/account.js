@@ -20,7 +20,6 @@ $(document).ready(function() {
           <div class="uk-accordion-content">
             <p class="uk-text-left uk-align-center">ID: ${data[i].satID}</p>
             <p class="uk-text-left uk-align-center">Name: ${data[i].satName}</p>
-            <p class="uk-text-left uk-align-center">Launch Date: ${data[i].launchDate}</p>
             <button class='uk-button delete-button uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>
           </div>
           `
