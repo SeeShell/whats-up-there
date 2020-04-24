@@ -43,27 +43,26 @@ function initSatMap({ center, points }) {
       }
     };
 
-    const textSat = {
-      type: "text", // autocasts as new TextSymbol()
-      color: "white",
-      haloColor: "black",
-      haloSize: "1px",
-      text: "sat name",
-      xoffset: 3,
-      yoffset: 3,
-      font: {
-        // autocasts as new Font()
-        size: 12,
-        family: "Josefin Slab",
-        weight: "bold"
-      }
-    };
+    // const textSat = {
+    //   type: "text", // autocasts as new TextSymbol()
+    //   color: "white",
+    //   haloColor: "black",
+    //   haloSize: "1px",
+    //   text: "sat name",
+    //   xoffset: 3,
+    //   yoffset: 3,
+    //   font: {
+    //     // autocasts as new Font()
+    //     size: 12,
+    //     family: "Josefin Slab",
+    //     weight: "bold"
+    //   }
+    // };
 
     const pointGraphics = points.map(point => {
       return new Graphic({
         geometry: new Point(point),
-        symbol: textSymbol,
-        symbol: textSat
+        symbol: textSymbol
       });
     });
 

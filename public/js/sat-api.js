@@ -81,9 +81,9 @@ window.satApi = {
       }).then(result => {
         console.log(result.above);
 
-        let mapCoords = result.above.map(sat => {
-          return { latitude: sat.satlat, longitude: sat.satlng };
-        });
+        // let mapCoords = result.above.map(sat => {
+        //   return { latitude: sat.satlat, longitude: sat.satlng };
+        // });
         // const aboveData = result.above;
         // console.log(aboveData.length);
         // console.log(aboveData);
