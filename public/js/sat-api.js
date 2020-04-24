@@ -2,62 +2,61 @@ const queryN2YO = "https://www.n2yo.com/rest/v1/satellite/";
 const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
-// const satelliteIDArray = {
-//     18: "Amateur radio",
-//     35: "Beidou Navigation System",
-//     1: "Brightest",
-//     45: "Celestis",
-//     32: "CubeSats",
-//     8: "Disaster monitoring",
-//     6: "Earth resources",
-//     29: "Education",
-//     Engineering 28
-//     Experimental 19
-//     Flock 48
-//     Galileo 22
-//     Geodetic 27
-//     Geostationary 10
-//     Global Positioning System(GPS) Constellation 50
-//     Global Positioning System(GPS) Operational 20
-//     Globalstar 17
-//     Glonass Constellation 51
-//     Glonass Operational 21
-//     GOES 5
-//     Gonets 40
-//     Gorizont 12
-//     Intelsat 11
-//     Iridium 15
-//     IRNSS 46
-//     Catgory id
-//     ISS 2
-//     Lemur 49
-//     Military 30
-//     Molniya 14
-//     Navy Navigation Satellite System 24
-//     NOAA 4
-//     O3B Networks 43
-//     OneWeb 53
-//     Orbcomm 16
-//     Parus 38
-//     QZSS 47
-//     Radar Calibration 31
-//     Raduga 13
-//     Russian LEO Navigation 25
-//     Satellite - Based Augmentation System 23
-//     Search & rescue 7
-//     Space & Earth Science 26
-//     Starlink 52
-//     Strela 39
-//     Tracking and Data Relay Satellite System 9
-//     Tselina 44
-//     Tsikada 42
-//     Tsiklon 41
-//     TV 34
-//     Weather 3
-//     Westford Needles 37
-//     XM and Sirius 33
-//     Yaogan 36
-// }
+const satelliteIDArray = {
+    18: "Amateur radio",
+    35: "Beidou Navigation System",
+    1: "Brightest",
+    45: "Celestis",
+    32: "CubeSats",
+    8: "Disaster monitoring",
+    6: "Earth resources",
+    29: "Education",
+    28: "Engineering",
+    19: "Experimental",
+    48: "Flock",
+    22: "Galileo",
+    27: "Geodetic",
+    10: "Geostationary",
+    50: "GPS Constellation",
+    20: "GPS Operational",
+    17: "Globalstar",
+    51: "Glonass Constellation",
+    21: "Glonass Operational",
+    5: "GOES",
+    40: "Gonets",
+    12: "Gorizont",
+    11: "Intelsat",
+    15: "Iridium",
+    46: "IRNSS",
+    2: "ISS",
+    49: "Lemur",
+    30: "Military",
+    14: "Molniya",
+    24: "Navy Navigation Satellite System",
+    4: "NOAA",
+    43: "O3B Networks",
+    53: "OneWeb",
+    16: "Orbcomm",
+    38: "Parus",
+    47: "QZSS",
+    31: "Radar Calibration",
+    13: "Raduga",
+    25: "Russian LEO Navigation",
+    23: "Augmentation System",
+    7: "Search & Rescue",
+    26: "Space & Earth Science",
+    52: "Starlink",
+    39: "Strela",
+    9: "Tracking & Data Relay",
+    44: "Tselina",
+    42: "Tsikada",
+    41: "Tsiklon",
+    34: "TV",
+    3: "Weather",
+    37: "Westford Needles",
+    33: "XM and Sirius",
+    36: "Yaogan"
+}
 
 window.satApi = {
     getPosition: (userLon, userLat) => {
@@ -153,6 +152,13 @@ function getAboveHomePage(userLon, userLat, categoryID) {
             console.log(aboveDataHome)
 
             for (let i = 0; i < aboveDataHome.length; i++) {
+
+                for (var key in satelliteIDArray) {
+                    if (key === categoryID) {
+                        console.log(key)
+                    }
+                }
+
                 var percentage1 = Math.floor(Math.random() * 21) + 20
                 var percentage2 = Math.floor(Math.random() * 21) + 20
                 var markerLink = `<a href="#satellite${i+1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: ${i+percentage1}%; top: ${i+percentage2}%" href="#" uk-marker>
