@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   app.get("/maps", isAuthenticated, function(req, res) {
-    res.render("map");
+    res.render("map"), styleArray[3];
   });
 
   app.get("/account", isAuthenticated, function(req, res) {
