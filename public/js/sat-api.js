@@ -42,6 +42,8 @@ window.satApi = {
             symbol: textSymbol
           });`;
                     pointGraphics += `pointGraphic${i}, `;
+
+
                 }
                 let mapDisplayData = `require([
           "esri/Map",
@@ -75,5 +77,24 @@ window.satApi = {
                 return points;
             });
         });
-    }
-};
+    },
+
+    // getAboveHomePage: (userLon, userLat, categoryID) => {
+    //     let searchRadius = 15;
+    //     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
+    //     $(function() {
+    //         $.ajax({
+    //             url: queryN2YO + aboveQuery + apiKeyN2YO,
+    //             method: "GET"
+    //         }).then(result => {
+    //             // let aboveData = result.above.map(sat => {
+    //             //   return `${sat.satid}, ${sat.satname}, ${sat.launchDate}, ${sat.satlat}, ${sat.satlng}, ${sat.satalt}, \n`;
+    //             // });
+    //             const aboveDataHome = result.above;
+    //             console.log(aboveDataHome.length);
+
+    //         })
+
+    //     });
+    // }
+}

@@ -60,7 +60,7 @@ $(document).ready(function() {
     // });
 
     // Getting references to our form and input
-    var categories = $("#categories");
+
     var select = $("select");
     var searchBtn = $("#searchBtn");
 
