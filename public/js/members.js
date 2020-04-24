@@ -12,7 +12,8 @@ function logLocation(position) {
 
   localStorage.setItem("userLon", userLon);
   localStorage.setItem("userLat", userLat);
-  satApi.getAbove(userLon, userLat, 0).then(aboveData => {
+  satApi.getVisualPass(userLat, userLon, 25544, 5, 100);
+  satApi.getAbove(userLon, userLat, 0, 15).then(aboveData => {
     satMap.renderPoints(aboveData);
   });
 }

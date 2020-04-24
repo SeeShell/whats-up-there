@@ -3,7 +3,7 @@ const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
 window.satApi = {
-  getPosition: (userLon, userLat) => {
+  getPosition: (userLon, userLat, satID) => {
     let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
     $(function() {
       $.ajax({
@@ -15,8 +15,8 @@ window.satApi = {
     });
   },
 
-  getAbove: (userLon, userLat, categoryID) => {
-    let searchRadius = 15;
+  getAbove: (userLon, userLat, categoryID, searchRadius) => {
+    // let searchRadius = 15;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
     $(function() {
       $.ajax({
@@ -28,7 +28,7 @@ window.satApi = {
         // });
         const aboveData = result.above;
         console.log(aboveData.length);
-        console.log(aboveData);
+        // console.log(aboveData);
         let points = "";
         let pointGraphics = [];
         for (let i = 0; i < aboveData.length; i++) {
@@ -72,7 +72,19 @@ window.satApi = {
         };
         view.graphics.addMany([${pointGraphics}]);`;
         console.log(mapDisplayData);
-        return points;
+        return points, mapDisplayData;
+      });
+    });
+  },
+
+  getVisualPass: (userLat, userLon, satID, days, minVis) => {
+    let visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVis}`;
+    $(function() {
+      $.ajax({
+        url: queryN2YO + visPassQuery + apiKeyN2YO,
+        method: "GET"
+      }).then(result => {
+        console.log(result);
       });
     });
   }
