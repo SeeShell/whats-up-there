@@ -1,0 +1,66 @@
+#login-link {
+  color: white;
+}
+
+a {
+  color: #bb86fc;
+}
+
+.uk-heading-medium,
+.uk-button,
+.uk-heading-small {
+    margin: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+#user {
+  font-size: 30px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
+#favorites-list, #favorites-list a {
+  color: white;
+  background-color: #303030;
+  margin: 10px 50px;
+  list-style-type: none;
+  border-radius: 5px;
+}
+
+.change-button {
+  background-color: #bb86fc;
+  border-color: #000000;
+}
+
+.delete-button {
+  background-color: #bb86fc;
+  border-color: #000000;
+  margin: auto;
+}
+
+.container {
+  background-color: #303030;
+  border-radius: 5px;
+}
+
+.uk-container>:last-child {
+  margin-bottom: 20px;
+}
+
+.uk-card-body {
+  margin: auto;
+}
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+#navBar {
+  background-color: #303030da !important;
+  color: white !important;
+}
