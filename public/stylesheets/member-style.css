@@ -83,7 +83,7 @@ a:hover {
 
 #satellite-display {
     background-color: rgba(255, 192, 203, 0);
-    height: 200px;
+    height: 250px;
 }
 
 #user {
@@ -95,15 +95,19 @@ a:hover {
     margin: 0px;
 }
 
+#heading-text{
+    font-size: 20px;
+}
+
 #time,
 #city,
 #favorite-city,
 #spinner {
-    font-size: 32px;
+    font-size: 24px;
     background-color: rgba(255, 192, 203, 0);
     text-align: center;
     color: white;
-    padding: 0px;
+    padding: 0px 18px 0px 24px;
     margin: 0px;
 }
 
@@ -112,7 +116,7 @@ a:hover {
     background-color: rgba(255, 192, 203, 0);
     text-align: center;
     color: white;
-    padding: 0px;
+    padding: 0px 18px 0px 24px;
 }
 
 
