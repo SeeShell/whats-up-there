@@ -86,7 +86,7 @@ window.satApi = {
         } else if (source === "maps") {
           sendAnswers(sats);
         } else if (source === "category") {
-          console.log(sats);
+          showCategory(sats);
         }
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
@@ -107,6 +107,9 @@ window.satApi = {
 };
 
 function getAboveHomePage(sats) {
+  numSats = sats.length;
+  numSatsMessage = `<p>There are ${numSats} satellites above you in a 15&#176; search radius</p>`
+  $("#num-sats").append(numSatsMessage);
   const aboveDataHome = sats;
   // console.log(aboveDataHome);
   $("#spinner").hide();
@@ -129,11 +132,10 @@ function getAboveHomePage(sats) {
 
         <p id="satellite-${i + 1}-name"style="font-weight: bold;">
         ${aboveDataHome[i].satname}</p>
-        <p id="satellite-${i + 1}-launch">IDENTIFICATION : 
+        <p id="satellite-${i + 1}-launch">SAT ID : 
         ${aboveDataHome[i].satid}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
-        <p id="satellite-${i + 1}-class">CLASSIFICATION : </p>
         <button class="sat" 
         data-name="${aboveDataHome[i].satname}" 
         data-id="${aboveDataHome[i].satid}" 
@@ -170,4 +172,10 @@ function getFavorites() {
       $("#fav-satellite").append(satFav);
     }
   });
+}
+
+function showCategory(sats) {
+  console.log(sats);
+  const numSats = sats.length;
+  // $("#num-sat").append(``)
 }

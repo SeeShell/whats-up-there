@@ -42,7 +42,7 @@ searchBtn.on("click", function(event) {
   event.preventDefault();
   var selectedValue = select.val();
   console.log(selectedValue);
-  satApi.getAbove(userLon, userLat, selectedValue, 15, "category");
+  satApi.getAbove(userLon, userLat, selectedValue, 45, "category");
 });
 
 // $("#bookmark-icon").on("click", function(event) {

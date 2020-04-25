@@ -106,6 +106,14 @@ a:hover {
     margin: 0px;
 }
 
+#num-sats{
+    font-size: 14px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
 #favorite-city {
     font-size: 60px;
     background-color: rgba(255, 192, 203, 0);
