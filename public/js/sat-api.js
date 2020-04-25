@@ -82,11 +82,12 @@ window.satApi = {
         // console.log(result.above);
         let sats = result.above;
         if (source === "members") {
-          getAboveHomePage(sats);
+          getAboveHomePage(sats, 15);
         } else if (source === "maps") {
           sendAnswers(sats);
         } else if (source === "category") {
-          showCategory(sats);
+          // showCategory(sats);
+          getAboveHomePage(sats, 45);
         }
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
@@ -106,13 +107,15 @@ window.satApi = {
   }
 };
 
-function getAboveHomePage(sats) {
+function getAboveHomePage(sats, searchRad) {
   numSats = sats.length;
-  numSatsMessage = `<p>There are ${numSats} satellites above you in a 15&#176; search radius</p>`
-  $("#num-sats").append(numSatsMessage);
+  numSatsMessage = `<p>There are ${numSats} satellites above you in a ${searchRad}&#176; search radius</p>`
+  $("#num-sats").html(numSatsMessage);
+  //.append
   const aboveDataHome = sats;
   // console.log(aboveDataHome);
   $("#spinner").hide();
+  $("#satellite-display").empty();
   var userID = "";
   $.get("/api/user_data").then(function(data) {
     userID = data.id;
