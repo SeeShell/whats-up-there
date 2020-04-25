@@ -20,6 +20,11 @@ $(document).ready(function() {
           <div class="uk-accordion-content">
             <p class="uk-text-left uk-align-center">ID: ${data[i].satID}</p>
             <p class="uk-text-left uk-align-center">Name: ${data[i].satName}</p>
+            <form>
+              <div class="uk-margin">
+                  <input class="uk-input uk-form-width-large" type="text" placeholder="new nickname">
+              </div>
+            </form>
             <button class='uk-button delete-button uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>
           </div>
           `
@@ -30,7 +35,7 @@ $(document).ready(function() {
         const id = $(this).attr("data-id");
         $.ajax({
           method: "DELETE",
-          url: `/api/user_favorites/${id}`
+          url: `/api/remove_user_favorites/${id}`
         }).then(function() {
           getFavorites();
         });
@@ -38,17 +43,16 @@ $(document).ready(function() {
     });
   }
 
-  // $("#delete").on("click", function() {
-  //   const id = $(this)
-  //     .attr("data-id")
-  //     .val();
-  //   $.ajax({
-  //     method: "DELETE",
-  //     url: `/api/user_favorites/${id}`
-  //   }).then(function() {
-  //     getFavorites();
-  //   });
-  // });
+  function updateNickname() {
+    $.ajax({
+      method: "PUT",
+      url: "/api/user_favorites_new_nickname",
+      data: post
+    }).then(function() {
+      getFavorites();
+    });
+  }
+
   getUser();
   getFavorites();
 });
