@@ -238,6 +238,8 @@ function displayVisPass(result) {
     var numPassesLine = $("<p>");
     numPassesLine.text(numPassesText);
     $(satDiv).append(numPassesLine);
-    // passes.forEach(pass => {});
+    // passes.forEach(pass => {
+
+    // });
   }
 }
