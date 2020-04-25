@@ -7,31 +7,39 @@
     height: 100%;
     width: 100%;
   }
+
+  #homebutton {
+    height: 50px;
+    width: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+    font-weight: 500;
+  }
 </style>
 
-
+<a href="/members">
+  <input id="homebutton" type="submit" value="Home"
+    style="position: absolute; z-index: 1000; left: 100px; float: right;" />
+</a>
 <div id="viewDiv">
-
-
 </div>
+{{!-- <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+  <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar"
+    style="position: relative; z-index: 980;">
+    <div class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
 
-   <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-            <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
-                <div class="uk-navbar-center">
-                    <ul class="uk-navbar-nav">
+        <li class="uk-animation-toggle" tabindex="0"><a href="/members" uk-icon="icon: home; ratio: 2" id="user-icon"
+            class="uk-align-right uk-animation-scale-up"></a></li>
 
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span href="/members" uk-icon="icon: home; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></a></li>
-                        </div>
+        <li class="uk-animation-toggle" tabindex="0"><a href="/account" uk-icon="icon: user; ratio: 2" id="user-icon"
+            class="uk-align-right uk-animation-scale-up"></a></li>
 
-                          <div class="uk-animation-toggle" tabindex="0">
-                            <li><span href="/account" uk-icon="icon: user; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></a></li>
-                        </div>
+      </ul>
+    </div>
+  </nav>
+</div> --}}
 
-                    </ul>
-                    </div>
-            </nav>
-            </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://js.arcgis.com/4.15/"></script>
