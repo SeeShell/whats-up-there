@@ -76,3 +76,7 @@ function initSatMap(mapCoords, satNames) {
     view.graphics.addMany(pointGraphics);
   }
 }
+
+// $("#Addlyr").click(() => {
+//   alert("clicked!");
+// });
