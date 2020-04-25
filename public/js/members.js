@@ -42,6 +42,9 @@ searchBtn.on("click", function(event) {
   event.preventDefault();
   var selectedValue = select.val();
   console.log(selectedValue);
+  $("#num-sats").empty();
+  $("#spinner").show();
+  $("#satellite-display").empty();
   satApi.getAbove(userLon, userLat, selectedValue, 45, "category");
 });
 
