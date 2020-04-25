@@ -9,6 +9,10 @@ h3 {
     opacity: 0.95;
 }
 
+.uk-sticky-placeholder {
+    margin: 0px;
+}
+
 .filter {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
@@ -77,10 +81,6 @@ a:hover {
     text-align: center;
 }
 
-#time {
-    font-size: 65px;
-}
-
 #favorite-city,
 #user {
     font-weight: 300;
@@ -88,6 +88,7 @@ a:hover {
 
 #satellite-display {
     background-color: rgba(255, 192, 203, 0);
+    height: 250px;
 }
 
 #user {
@@ -108,24 +109,34 @@ a:hover {
     margin: 0px;
 }
 
-#time,
-#city,
-#favorite-city {
-    font-size: 60px;
+#latlon {
+    font-size: 12px;
+    font-weight: bold;
     background-color: rgba(255, 192, 203, 0);
     text-align: center;
     color: white;
-    padding: 0px;
+    padding: 0px 18px 0px 24px;
     margin: 0px;
 }
 
-#favorite-city {
-    font-size: 60px;
+#time,
+#city,
+#favorite-city,
+#spinner {
+    font-size: 24px;
     background-color: rgba(255, 192, 203, 0);
     text-align: center;
     color: white;
-    padding: 0px;
+    padding: 0px 18px 0px 24px;
     margin: 0px;
+}
+
+#num-sats {
+    font-size: 18px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px 18px 0px 24px;
 }
 
 #navBar {
