@@ -18,15 +18,17 @@ $(document).ready(function() {
           `
           <a class="uk-accordion-title uk-light uk-text-center" href="#">${data[i].nickname}</a>
           <div class="uk-accordion-content uk-column-1-2 " style="text-align: center;">
-            <p class="uk-text-left uk-align-center">ID: ${data[i].satID}<br>
+            <p class="uk-text-left uk-align-center" style="margin-bottom: 0;">ID: ${data[i].satID}<br>
             Name: ${data[i].satName}</p>
             <form>
               <div class="uk-margin">
                   <input id="nickname-input" class="uk-input uk-form-width-large" type="text" placeholder="new nickname">
-                  <button class='uk-button submit-button uk-align-center uk-text-center' data-id="${data[i].id}" id='submit'><span uk-icon="check"></span></button>
               </div>
             </form>
             <button class='uk-button delete-button uk-button-small uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>
+            <div class="uk-margin">
+              <button class='uk-button submit-button uk-button-small uk-align-center uk-text-center' data-id="${data[i].id}" id='submit'><span uk-icon="check"></span></button>
+            </div>
           </div>
           `
         );
@@ -60,17 +62,6 @@ $(document).ready(function() {
       });
     });
   }
-
-  function updateNickname(nickname) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/user_favorites_new_nickname",
-      data: nickname
-    }).then(function() {
-      getFavorites();
-    });
-  }
-
   getUser();
   getFavorites();
 });
