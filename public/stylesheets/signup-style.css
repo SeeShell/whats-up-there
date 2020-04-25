@@ -13,6 +13,12 @@ a:hover {
     padding-top: 0px;
 }
 
+#solar {
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
 a {
     color: #bb86fc;
 }

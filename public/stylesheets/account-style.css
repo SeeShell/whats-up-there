@@ -8,8 +8,14 @@ h3 {
     color: white;
 }
 
+#bookmark {}
+
 a {
     color: white;
+}
+
+.uk-heading-medium {
+    font-size: 30px;
 }
 
 a:hover {
@@ -43,6 +49,10 @@ a:hover {
     border-radius: 5px;
 }
 
+#list {
+    padding-left: 20px
+}
+
 .change-button {
     background-color: #bb86fc;
     border-color: #000000;
@@ -51,7 +61,6 @@ a:hover {
 .delete-button {
     background-color: #bb86fc;
     border-color: #000000;
-    margin: auto;
 }
 
 .container {
