@@ -42,6 +42,7 @@ function initSatMap(mapCoords, satNames) {
       zoom: 4
     });
 
+    // map over sat names array and create text symbols
     const satNameArray = satNames.map(name => {
       return {
         type: "text", // autocasts as new TextSymbol()
@@ -60,12 +61,14 @@ function initSatMap(mapCoords, satNames) {
       };
     });
 
+    // map over sat coordinates array and contruct a new graphic with sat coords
     const pointGraphics = mapCoords.map(point => {
       return new Graphic({
         geometry: new Point(point)
       });
     });
 
+    // add sat names into pointGraphic obects
     for (let i = 0; i < satNameArray.length; i++) {
       pointGraphics[i].symbol = satNameArray[i];
     }
