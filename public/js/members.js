@@ -7,8 +7,7 @@ function logLocation(position) {
   console.log(position);
   localStorage.setItem("userLon", userLon);
   localStorage.setItem("userLat", userLat);
-  // satApi.getVisualPass(userLat, userLon, 25544, 5, 100);
-  satApi.getAbove(userLon, userLat, 0, 15);
+  satApi.getAbove(userLon, userLat, 0, 15, "members");
 }
 
 // CLOCK
@@ -41,8 +40,16 @@ var searchBtn = $("#searchBtn");
 
 searchBtn.on("click", function(event) {
   event.preventDefault();
-  var selectedValue = select.val();
+  let selection = select.val();
+  let selectionArr = selection.split(" ");
+  var selectedValue = selectionArr[0];
+  let selectedCat = selectionArr[1];
+  console.log(selectedCat);
   console.log(selectedValue);
+  $("#num-sats").empty();
+  $("#spinner").show();
+  $("#satellite-display").empty();
+  satApi.getAbove(userLon, userLat, selectedValue, 45, "category");
 });
 
 // $("#bookmark-icon").on("click", function(event) {
