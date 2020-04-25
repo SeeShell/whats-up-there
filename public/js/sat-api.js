@@ -154,7 +154,7 @@ function getAboveHomePage(sats, searchRad) {
       nickname: satellite.attr("data-name"),
       UserId: userID
     };
-    $.post("/api/user_favorites", satData).then(function() {
+    $.post("/api/new_user_favorites", satData).then(function() {
       getFavorites();
     });
   });
