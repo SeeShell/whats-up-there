@@ -9,6 +9,15 @@ h3 {
     opacity: 0.95;
 }
 
+.uk-sticky-placeholder {
+    margin: 0px;
+}
+
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
 a {
     color: white;
 }
@@ -72,10 +81,6 @@ a:hover {
     text-align: center;
 }
 
-/* #time {
-    font-size: 65px;
-} */
-
 #favorite-city,
 #user {
     font-weight: 300;
@@ -95,8 +100,23 @@ a:hover {
     margin: 0px;
 }
 
-#heading-text{
+#spinner {
     font-size: 20px;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+#latlon {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgba(255, 192, 203, 0);
+    text-align: center;
+    color: white;
+    padding: 0px 18px 0px 24px;
+    margin: 0px;
 }
 
 #time,
@@ -111,14 +131,13 @@ a:hover {
     margin: 0px;
 }
 
-#num-sats{
+#num-sats {
     font-size: 18px;
     background-color: rgba(255, 192, 203, 0);
     text-align: center;
     color: white;
     padding: 0px 18px 0px 24px;
 }
-
 
 #navBar {
     background-color: #303030da !important;

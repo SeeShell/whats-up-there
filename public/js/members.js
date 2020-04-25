@@ -8,6 +8,28 @@ function logLocation(position) {
   localStorage.setItem("userLon", userLon);
   localStorage.setItem("userLat", userLat);
   satApi.getAbove(userLon, userLat, 0, 15, "members");
+  showCity(userLat, userLon);
+}
+
+function showCity(userLat, userLon) {
+  var APIKey = "82fdd99a86105b66de45ae6fa55be58f";
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    userLat +
+    "&lon=" +
+    userLon +
+    "&appid=" +
+    APIKey;
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(result) {
+    var city = result.name;
+    var userLatFix = userLat.toFixed(2);
+    var userLonFix = userLon.toFixed(2);
+    $("#favorite-city").append(city);
+    $("#latlon").append("COORDINATES: " + userLatFix + ", " + userLonFix);
+  });
 }
 
 // CLOCK
@@ -31,10 +53,6 @@ function showTime() {
 
 showTime();
 
-// CITY
-var city = $("<p>").text("SAN DIEGO");
-$("#favorite-city").append(city);
-
 var select = $("select");
 var searchBtn = $("#searchBtn");
 
@@ -51,38 +69,3 @@ searchBtn.on("click", function(event) {
   $("#satellite-display").empty();
   satApi.getAbove(userLon, userLat, selectedValue, 45, "category");
 });
-
-// $("#bookmark-icon").on("click", function(event) {
-//     event.preventDefault();
-//     getFavorites();
-// });
-
-// function getFavorites() {
-//     $("#list").empty();
-//     $.get("/api/user_favorites").then(function(data) {
-//         for (let i = 0; i < data.length; i++) {
-//             var list = $("<li>");
-//             list.html(
-//                 `
-//             <a class="uk-accordion-title uk-text-center" data-id='1' href="#" style="font size=20px;">${data[i].satName}</a>
-//             <div class="uk-accordion-content">
-//               <p class="uk-text-left uk-align-center" style="font size=15px; font-weight:300;">ID: ${data[i].satID}</p>
-//               <p class="uk-text-left uk-align-center" style="font size=15px; font-weight:300">Launch Date: ${data[i].launchDate}</p>
-//             </div>
-//             `
-//             );
-//             list.attr("data-id", data[i].id);
-//             $("#fav-satellite").append(list);
-//         }
-//     });
-// }
-
-// $("#favoriteChoice").on("click", function(event) {
-//     event.preventDefault();
-//     var satChoice = $(this);
-//     console.log(satChoice)
-//         // $.post("/api/user_favorites", Post, function() {
-//         //         .data("post");
-//         //     window.location.href = "/members";
-//         // });
-// });

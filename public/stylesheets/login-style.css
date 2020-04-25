@@ -12,6 +12,11 @@ a {
     color: #bb86fc;
 }
 
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
 .uk-card {
     background-color: #303030da;
     border-radius: 5px;

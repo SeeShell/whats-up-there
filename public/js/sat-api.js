@@ -1,7 +1,6 @@
 const queryN2YO = "https://www.n2yo.com/rest/v1/satellite/";
 const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
-
 // const satelliteIDArray = {
 //   18: "Amateur radio",
 //   35: "Beidou Navigation System",
@@ -57,7 +56,6 @@ const userAlt = 0;
 //   33: "XM and Sirius",
 //   36: "Yaogan"
 // };
-
 window.satApi = {
   getPosition: (userLon, userLat, satID) => {
     let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
@@ -70,7 +68,6 @@ window.satApi = {
       });
     });
   },
-
   getAbove: (userLon, userLat, categoryID, searchRadius, source) => {
     // let searchRadius = 15;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
@@ -93,7 +90,6 @@ window.satApi = {
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
     });
   },
-
   getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
     const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
     $(function() {
@@ -133,7 +129,6 @@ function getAboveHomePage(sats, searchRad) {
       <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
         1}">
         <button class="uk-modal-close-outside" type="button" uk-close></button>
-
         <p id="satellite-${i + 1}-name"style="font-weight: bold;">
         ${aboveDataHome[i].satname}</p>
         <p id="satellite-${i + 1}-launch">SAT ID : 
@@ -164,7 +159,6 @@ function getAboveHomePage(sats, searchRad) {
     });
   });
 }
-
 getFavorites();
 
 function getFavorites() {

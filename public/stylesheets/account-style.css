@@ -1,9 +1,24 @@
+body,
+h3 {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 #login-link {
     color: white;
 }
 
 a {
     color: white;
+}
+
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+.uk-heading-medium {
+    font-size: 30px;
 }
 
 a:hover {
@@ -37,6 +52,10 @@ a:hover {
     border-radius: 5px;
 }
 
+#list {
+    padding-left: 20px
+}
+
 .change-button {
     background-color: #bb86fc;
     border-color: #000000;
@@ -45,7 +64,6 @@ a:hover {
 .delete-button {
     background-color: #bb86fc;
     border-color: #000000;
-    margin: auto;
 }
 
 .container {
