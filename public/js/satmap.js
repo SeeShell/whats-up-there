@@ -5,7 +5,6 @@ console.log(userLat, userLon);
 satApi.getAbove(userLon, userLat, 0, 25);
 
 function sendAnswers(data) {
-  console.log(data);
   const mapCoords = data.map(sat => {
     return {
       latitude: sat.satlat,
@@ -42,18 +41,6 @@ function initSatMap(mapCoords, satNames) {
       map: map,
       zoom: 4
     });
-
-    // // Create a symbol for drawing the point
-    // const textSymbol = {
-    //   type: "text", // autocasts as new TextSymbol()
-    //   color: "#7A003C",
-    //   text: "\ue680", // esri-icon-map-pin
-    //   font: {
-    //     // autocasts as new Font()
-    //     size: 24,
-    //     family: "CalciteWebCoreIcons"
-    //   }
-    // };
 
     const satNameArray = satNames.map(name => {
       return {
