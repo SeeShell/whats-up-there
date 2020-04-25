@@ -167,7 +167,7 @@ function getFavorites() {
     for (let i = 0; i < data.length; i++) {
       var satFav = $("<p>");
       satFav.text(`${data[i].nickname}`);
-      let visPass = $("<button>");
+      let visPass = $("<span>");
       // visPass.addClass("fave-visPass");
       visPass.html(
         `<a id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>`
