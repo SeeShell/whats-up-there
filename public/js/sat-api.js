@@ -111,44 +111,67 @@ function getAboveHomePage(userLon, userLat, categoryID) {
             $("#spinner").hide();
             const aboveDataHome = result.above;
             console.log(aboveDataHome);
-
+            var userID = "";
+            $.get("/api/user_data").then(function(data) {
+                userID = data.id;
+            });
             for (let i = 0; i < aboveDataHome.length; i++) {
                 var percentage1 = Math.floor(Math.random() * 5);
-                var percentage2 = Math.floor(Math.random() * 90) + 5;
-                var add1 = Math.floor(Math.random() * 90) + 5;
-                var add2 = Math.floor(Math.random() * 5);
+                var percentage2 = Math.floor(Math.random() * 75) + 5;
+                var add1 = Math.floor(Math.random() * 75) + 5;
+                var add2 = Math.floor(Math.random() * 2) + 2;
                 var markerLink = `<a href="#satellite${i +
           1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
           ${i + percentage1 + add1}%; top: 
           ${i + percentage2 + add2}%" href="#" uk-marker>
-    <i class="fas fa-satellite"></i></a>
-    <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
-      1}">
+      <i class="fas fa-satellite"></i></a>
+      <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
+        1}">
         <button class="uk-modal-close-outside" type="button" uk-close></button>
 
-        <p id="satellite-${i + 1}-name" style="font-weight: bold;">
+        <p id="satellite-${i + 1}-name"style="font-weight: bold;">
         ${aboveDataHome[i].satname}</p>
         <p id="satellite-${i + 1}-launch">IDENTIFICATION : 
         ${aboveDataHome[i].satid}
         <p id="satellite-${i + 1}-launch">LAUNCH : 
         ${aboveDataHome[i].launchDate}</p>
-        <a href="" id="sat${i}" uk-icon="icon: bookmark; ratio: 2"></a><br>
+        <button class="sat" 
+        data-name="${aboveDataHome[i].satname}" 
+        data-id="${aboveDataHome[i].satid}" 
+        uk-icon="icon: bookmark; ratio: 2"></button>
+        <br>
         <a href="/maps"> VIEW MAP</a>
         </div> </div>`;
-
                 $("#satellite-display").append(markerLink);
-
-                $("#sat" + i).on("click", function(event) {
-                    $("#sat" + i).hide();
-                    event.preventDefault();
-                    satName = $("#satellite-" + i + "-name").text();
-                    localStorage.setItem("favSat" + i, satName);
-                    localStorage.getItem("favSat" + i);
-                    var satFav = $("<p>").text(satName);
-                    $("#fav-satellite").append(satFav);
-                });
             }
+            $(".sat").on("click", function(event) {
+                var satellite = $(this);
+                $(this).hide();
+                event.preventDefault();
+                satData = {
+                    satName: satellite.attr("data-name"),
+                    satID: satellite.attr("data-id"),
+                    nickname: satellite.attr("data-name"),
+                    UserId: userID
+                };
+                $.post("/api/user_favorites", satData).then(function() {
+                    getFavorites();
+                });
+            });
         });
+    });
+}
+
+getFavorites();
+
+function getFavorites() {
+    $("#fav-satellite").empty();
+    $.get("/api/user_favorites").then(function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var satFav = $("<p>");
+            satFav.text(`${data[i].nickname}`);
+            $("#fav-satellite").append(satFav);
+        }
     });
 }
