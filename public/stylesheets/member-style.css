@@ -16,6 +16,8 @@ h3 {
 .filter {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
+    height: 28px;
+    width: 28px;
 }
 
 a {
@@ -171,4 +173,7 @@ a:hover {
     to {
         transform: rotate(359deg);
     }
+}
+.navTitle {
+    font-size: 24px;
 }
