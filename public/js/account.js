@@ -16,11 +16,11 @@ $(document).ready(function() {
         var list = $("<li>");
         list.html(
           `
-          <a class="uk-accordion-title uk-text-center" href="#">${data[i].nickname}</a>
-          <div class="uk-accordion-content">
-            <p class="uk-text-left uk-align-center">ID: ${data[i].satID}</p>
-            <p class="uk-text-left uk-align-center">Name: ${data[i].satName}</p>
-            <button class='uk-button delete-button uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>
+          <a class="uk-accordion-title uk-light uk-text-center" href="#">${data[i].nickname}</a>
+          <div class="uk-accordion-content uk-column-1-2 " style="text-align: center;">
+            <p class="uk-text-left uk-align-center">ID: ${data[i].satID}<br>
+            Name: ${data[i].satName}</p>
+            <button class='uk-button delete-button uk-button-small uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>
           </div>
           `
         );
