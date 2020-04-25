@@ -12,11 +12,16 @@ function sendAnswers(data) {
       longitude: sat.satlng
     };
   });
+  const satNames = data.map(sat => {
+    return {
+      satname: sat.satname
+    };
+  });
 
-  initSatMap(mapCoords);
+  initSatMap(mapCoords, satNames);
 }
 
-function initSatMap(mapCoords) {
+function initSatMap(mapCoords, satNames) {
   require([
     "esri/Map",
     "esri/PopupTemplate",
@@ -50,21 +55,24 @@ function initSatMap(mapCoords) {
       }
     };
 
-    // const textSat = {
-    //   type: "text", // autocasts as new TextSymbol()
-    //   color: "white",
-    //   haloColor: "black",
-    //   haloSize: "1px",
-    //   text: "sat name",
-    //   xoffset: 3,
-    //   yoffset: 3,
-    //   font: {
-    //     // autocasts as new Font()
-    //     size: 12,
-    //     family: "Josefin Slab",
-    //     weight: "bold"
-    //   }
-    // };
+    const satNameArray = satNames.map(name => {
+      return {
+        type: "text", // autocasts as new TextSymbol()
+        color: "white",
+        haloColor: "black",
+        haloSize: "1px",
+        text: name.satname,
+        xoffset: 3,
+        yoffset: 3,
+        font: {
+          // autocasts as new Font()
+          size: 12,
+          family: "Josefin Slab",
+          weight: "bold"
+        }
+      };
+    });
+    console.log(satNameArray);
 
     const pointGraphics = mapCoords.map(point => {
       return new Graphic({
@@ -72,7 +80,7 @@ function initSatMap(mapCoords) {
         symbol: textSymbol
       });
     });
-
+    console.log(pointGraphics);
     // Add the graphics to the view's graphics layer
     view.graphics.addMany(pointGraphics);
   }
