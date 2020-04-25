@@ -43,17 +43,17 @@ function initSatMap(mapCoords, satNames) {
       zoom: 4
     });
 
-    // Create a symbol for drawing the point
-    const textSymbol = {
-      type: "text", // autocasts as new TextSymbol()
-      color: "#7A003C",
-      text: "\ue680", // esri-icon-map-pin
-      font: {
-        // autocasts as new Font()
-        size: 24,
-        family: "CalciteWebCoreIcons"
-      }
-    };
+    // // Create a symbol for drawing the point
+    // const textSymbol = {
+    //   type: "text", // autocasts as new TextSymbol()
+    //   color: "#7A003C",
+    //   text: "\ue680", // esri-icon-map-pin
+    //   font: {
+    //     // autocasts as new Font()
+    //     size: 24,
+    //     family: "CalciteWebCoreIcons"
+    //   }
+    // };
 
     const satNameArray = satNames.map(name => {
       return {
@@ -72,15 +72,16 @@ function initSatMap(mapCoords, satNames) {
         }
       };
     });
-    console.log(satNameArray);
 
     const pointGraphics = mapCoords.map(point => {
       return new Graphic({
-        geometry: new Point(point),
-        symbol: textSymbol
+        geometry: new Point(point)
       });
     });
-    console.log(pointGraphics);
+
+    for (let i = 0; i < satNameArray.length; i++) {
+      pointGraphics[i].symbol = satNameArray[i];
+    }
     // Add the graphics to the view's graphics layer
     view.graphics.addMany(pointGraphics);
   }
