@@ -101,7 +101,8 @@ window.satApi = {
         url: queryN2YO + visPassQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        console.log(result);
+        // console.log(result);
+        displayVisPass(result);
       });
     });
   }
@@ -173,26 +174,51 @@ function getFavorites() {
       var satFav = $("<p>");
       satFav.text(`${data[i].nickname}`);
       let visPass = $("<button>");
-      visPass.addClass("fave-visPass");
-      visPass.html("<span class='uk-margin-small-left' uk-icon='rss'></span>");
-      visPass.attr("id", data.satID);
+      // visPass.addClass("fave-visPass");
+      visPass.html(
+        `<a id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>`
+      );
+      // visPass.attr("id", data[i].satID);
       satFav.append(visPass);
       $("#fav-satellite").append(satFav);
     }
+    $(".fave-visPass").on("click", function(event) {
+      event.preventDefault();
+      var sat = $(this);
+      let satID = sat.attr("id");
+      console.log(satID);
+      window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
+    });
   });
 }
-
-$(".fave-visPass").on("click", function(event) {
-  event.preventDefault();
-  var sat = $(this);
-  alert("are you listening?");
-  let satID = sat.attr("id").val();
-  console.log(satID);
-  // window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
-});
 
 function showCategory(sats) {
   console.log(sats);
   const numSats = sats.length;
   // $("#num-sat").append(``)
+}
+
+function displayVisPass(result) {
+  // console.log(result);
+  const satName = result.info.satname;
+  const satId = result.info.satid;
+  let numPasses = "";
+  let passes = "";
+  if (!result.passes) {
+    numPasses = 0;
+    console.log(`${satName} will pass ${numPasses} times in the next 2 days`)
+    return;
+  } else if (result.passes.length > 0){
+    numPasses = result.passes.length;
+    passes = result.passes.map(pass => {
+      return {
+        startUTC: pass.startUTC,
+        endUTC: pass.endUTC,
+        duration: pass.duration
+      };
+    });
+    console.log(passes);
+  }
+  const numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
+  console.log(numPassesText, satId);
 }
