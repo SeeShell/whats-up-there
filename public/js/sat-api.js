@@ -118,8 +118,8 @@ function getAboveHomePage(sats) {
     userID = data.id;
   });
   for (let i = 0; i < aboveDataHome.length; i++) {
-    var percentage1 = Math.floor(Math.random() * 21) + 40;
-    var percentage2 = Math.floor(Math.random() * 21) + 20;
+    var percentage1 = Math.floor(Math.random() * 100) + 1; //40
+    var percentage2 = Math.floor(Math.random() * 100) + 1; //20
     var markerLink = `<a href="#satellite${i +
       1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
           ${i + percentage1 + 5}%; top: 
