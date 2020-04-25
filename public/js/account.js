@@ -22,7 +22,8 @@ $(document).ready(function() {
             <p class="uk-text-left uk-align-center">Name: ${data[i].satName}</p>
             <form>
               <div class="uk-margin">
-                  <input class="uk-input uk-form-width-large" type="text" placeholder="new nickname">
+                  <input id="nickname-input" class="uk-input uk-form-width-large" type="text" placeholder="new nickname">
+                  <button class='uk-button submit-button uk-align-center uk-text-center' data-id="${data[i].id}" id='submit'><span uk-icon="trash"></span></button>
               </div>
             </form>
             <button class='uk-button delete-button uk-align-center uk-text-center' data-id="${data[i].id}" id='delete'><span uk-icon="trash"></span></button>

@@ -42,7 +42,7 @@ a:hover {
     border-color: #000000;
 }
 
-.delete-button {
+.delete-button, .submit-button {
     background-color: #bb86fc;
     border-color: #000000;
     margin: auto;
