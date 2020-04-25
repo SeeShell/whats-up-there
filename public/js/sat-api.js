@@ -71,7 +71,7 @@ window.satApi = {
     });
   },
 
-  getAbove: (userLon, userLat, categoryID, searchRadius) => {
+  getAbove: (userLon, userLat, categoryID, searchRadius, source) => {
     // let searchRadius = 15;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
     $(function() {
@@ -79,10 +79,13 @@ window.satApi = {
         url: queryN2YO + aboveQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        console.log(result.above);
-        sendAnswers(result.above);
+        // console.log(result.above);
         let sats = result.above;
-        getAboveHomePage(userLon, userLat, categoryID, sats);
+        if (source === 1) {
+          getAboveHomePage(sats);
+        } else if (source === 2) {
+          sendAnswers(sats);
+        }
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
     });
@@ -101,26 +104,19 @@ window.satApi = {
   }
 };
 
-function getAboveHomePage(userLon, userLat, categoryID, sats) {
-  let searchRadius = 15;
-  let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
-  $(function() {
-    $.ajax({
-      url: queryN2YO + aboveQuery + apiKeyN2YO,
-      method: "GET"
-    }).then(result => {
-      $("#spinner").hide();
-      const aboveDataHome = result.above;
-      console.log(aboveDataHome);
-      var userID = "";
-      $.get("/api/user_data").then(function(data) {
-        userID = data.id;
-      });
-      for (let i = 0; i < aboveDataHome.length; i++) {
-        var percentage1 = Math.floor(Math.random() * 21) + 40;
-        var percentage2 = Math.floor(Math.random() * 21) + 20;
-        var markerLink = `<a href="#satellite${i +
-          1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
+function getAboveHomePage(sats) {
+  const aboveDataHome = sats;
+  // console.log(aboveDataHome);
+  $("#spinner").hide();
+  var userID = "";
+  $.get("/api/user_data").then(function(data) {
+    userID = data.id;
+  });
+  for (let i = 0; i < aboveDataHome.length; i++) {
+    var percentage1 = Math.floor(Math.random() * 21) + 40;
+    var percentage2 = Math.floor(Math.random() * 21) + 20;
+    var markerLink = `<a href="#satellite${i +
+      1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
           ${i + percentage1 + 5}%; top: 
           ${i + percentage2 + 5}%" href="#" uk-marker>
       <i class="fas fa-satellite"></i></a>
@@ -143,22 +139,20 @@ function getAboveHomePage(userLon, userLat, categoryID, sats) {
         <br>
         <a href="/maps"> VIEW MAP</a>
         </div> </div>`;
-        $("#satellite-display").append(markerLink);
-      }
-      $(".sat").on("click", function(event) {
-        var satellite = $(this);
-        $(this).hide();
-        event.preventDefault();
-        satData = {
-          satName: satellite.attr("data-name"),
-          satID: satellite.attr("data-id"),
-          nickname: satellite.attr("data-name"),
-          UserId: userID
-        };
-        $.post("/api/user_favorites", satData).then(function() {
-          getFavorites();
-        });
-      });
+    $("#satellite-display").append(markerLink);
+  }
+  $(".sat").on("click", function(event) {
+    var satellite = $(this);
+    $(this).hide();
+    event.preventDefault();
+    satData = {
+      satName: satellite.attr("data-name"),
+      satID: satellite.attr("data-id"),
+      nickname: satellite.attr("data-name"),
+      UserId: userID
+    };
+    $.post("/api/user_favorites", satData).then(function() {
+      getFavorites();
     });
   });
 }

@@ -2,10 +2,10 @@ userLat = parseFloat(localStorage.getItem("userLat"));
 userLon = parseFloat(localStorage.getItem("userLon"));
 console.log(userLat, userLon);
 
-satApi.getAbove(userLon, userLat, 0, 25);
+satApi.getAbove(userLon, userLat, 0, 25, 2);
 
 function sendAnswers(data) {
-  console.log(data);
+  // console.log(data);
   const mapCoords = data.map(sat => {
     return {
       latitude: sat.satlat,
