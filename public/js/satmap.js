@@ -2,7 +2,7 @@ userLat = parseFloat(localStorage.getItem("userLat"));
 userLon = parseFloat(localStorage.getItem("userLon"));
 console.log(userLat, userLon);
 
-satApi.getAbove(userLon, userLat, 0, 25, 2);
+satApi.getAbove(userLon, userLat, 0, 25, "maps");
 
 function sendAnswers(data) {
   // console.log(data);

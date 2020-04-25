@@ -81,10 +81,12 @@ window.satApi = {
       }).then(result => {
         // console.log(result.above);
         let sats = result.above;
-        if (source === 1) {
+        if (source === "members") {
           getAboveHomePage(sats);
-        } else if (source === 2) {
+        } else if (source === "maps") {
           sendAnswers(sats);
+        } else if (source === "category") {
+          console.log(sats);
         }
       });
       // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
