@@ -56,7 +56,10 @@ const userAlt = 0;
 //   33: "XM and Sirius",
 //   36: "Yaogan"
 // };
-window.satApi = {
+window.satApi = { <<
+    <<
+    <<
+    < HEAD
     getPosition: (userLon, userLat, satID) => {
         let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
         $(function() {
@@ -91,16 +94,66 @@ window.satApi = {
         });
     },
     getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
-        const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
+            const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
+            $(function() {
+                $.ajax({
+                    url: queryN2YO + visPassQuery + apiKeyN2YO,
+                    method: "GET"
+                }).then(result => {
+                    console.log(result);
+                });
+            });
+        } ===
+        ===
+        =
+        getPosition: (userLon, userLat, satID) => {
+            let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
+            $(function() {
+                $.ajax({
+                    url: queryN2YO + positionQuery + apiKeyN2YO,
+                    method: "GET"
+                }).then(result => {
+                    console.log(result);
+                });
+            });
+        },
+    getAbove: (userLon, userLat, categoryID, searchRadius, source) => {
+        // let searchRadius = 15;
+        let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
         $(function() {
             $.ajax({
-                url: queryN2YO + visPassQuery + apiKeyN2YO,
+                url: queryN2YO + aboveQuery + apiKeyN2YO,
                 method: "GET"
             }).then(result => {
-                console.log(result);
+                // console.log(result.above);
+                let sats = result.above;
+                if (source === "members") {
+                    getAboveHomePage(sats, 15);
+                } else if (source === "maps") {
+                    sendAnswers(sats);
+                } else if (source === "category") {
+                    // showCategory(sats);
+                    getAboveHomePage(sats, 45);
+                }
             });
+            // window.satApi.getVisualPass(userLat, userLon, 25544, userAlt, 2, 100);
         });
-    }
+    },
+    getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
+            const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
+            $(function() {
+                $.ajax({
+                    url: queryN2YO + visPassQuery + apiKeyN2YO,
+                    method: "GET"
+                }).then(result => {
+                    // console.log(result);
+                    displayVisPass(result);
+                });
+            });
+        } >>>
+        >>>
+        >
+        f033a04040f2abdbebac70064327d55792471a54
 };
 
 function getAboveHomePage(sats, searchRad) {
@@ -144,66 +197,99 @@ function getAboveHomePage(sats, searchRad) {
         $("#satellite-display").append(markerLink);
     }
     $(".sat").on("click", function(event) {
-        var satellite = $(this);
-        $(this).hide();
-        event.preventDefault();
-        satData = {
-            satName: satellite.attr("data-name"),
-            satID: satellite.attr("data-id"),
-            nickname: satellite.attr("data-name"),
-            UserId: userID
-        };
-        $.post("/api/user_favorites", satData).then(function() {
+                var satellite = $(this);
+                $(this).hide();
+                event.preventDefault();
+                satData = {
+                    satName: satellite.attr("data-name"),
+                    satID: satellite.attr("data-id"),
+                    nickname: satellite.attr("data-name"),
+                    UserId: userID
+                };
+                $.post("/api/new_user_favorites", satData).then(function() {
+                    getFavorites();
+                });
+            }
             getFavorites();
-        });
-    });
-}
-getFavorites();
 
-function getFavorites() {
-    $("#fav-satellite").empty();
-    $.get("/api/user_favorites").then(function(data) {
-        for (let i = 0; i < data.length; i++) {
-            var satFav = $("<p>");
-            satFav.text(`${data[i].nickname}`);
-            let visPass = $("<button>");
-            // visPass.addClass("fave-visPass");
-            visPass.html(
+            function getFavorites() {
+                $("#fav-satellite").empty();
+                $.get("/api/user_favorites").then(function(data) {
+                            for (let i = 0; i < data.length; i++) {
+                                var satFav = $("<p>");
+                                satFav.text(`${data[i].nickname}`);
+                                let visPass = $("<span>");
+                                visPass.html(
+                                    `<a href="#satellite-favorite" uk-toggle id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>
+      <div id="satellite-favorite" class="uk-flex-top" uk-modal>
+     <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+         <button class="uk-modal-close-outside" type="button" uk-close></button>
+                     <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
+                     <div id = "nextGO-${data[i].satID}"><span id="spinner-vis-pass-${data[i].satID}" style="display: block">Fetching data...<i class="fas fa-satellite rotate uk-margin-small-left"></i></div>
+                 </button>
+         </form>
+         </div>
+         <br>
+         </div>
+     </div>
+ </div>`
+                                );
+                                satFav.append(visPass);
+                                $("#fav-satellite").append(satFav);
+                            }
+                            $(".fave-visPass").on("click", function(event) {
+                                event.preventDefault();
+                                var sat = $(this);
+                                let satID = sat.attr("id");
+                                console.log(satID);
+                                window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
+                            });
+                        }
 
-                `<a href="#satellite-favorite" uk-toggle id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>
-              <div id="satellite-favorite" class="uk-flex-top" uk-modal>
-             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+                        function showCategory(sats) {
+                            console.log(sats);
+                            const numSats = sats.length;
+                            // $("#num-sat").append(``)
+                        }
 
-                 <button class="uk-modal-close-outside" type="button" uk-close></button>
+                        function displayVisPass(result) {
+                            // console.log(result);
+                            const satName = result.info.satname;
+                            const satId = result.info.satid;
+                            const satDiv = `#nextGO-${satId}`;
+                            const spinnerID = `#spinner-vis-pass-${satId}`;
+                            // $("#spinner-vis-pass-123").hide();
+                            $(spinnerID).hide();
+                            console.log(satDiv);
+                            // const satId = result.info.satid;
+                            let numPasses = "";
+                            let passes = "";
+                            if (!result.passes) {
+                                numPasses = 0;
+                                numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
+                            } else if (result.passes.length > 0) {
+                                numPasses = result.passes.length;
+                                passes = result.passes.map(pass => {
+                                    return {
+                                        startUTC: pass.startUTC,
+                                        endUTC: pass.endUTC,
+                                        duration: pass.duration
+                                    };
+                                });
+                                numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
+                            }
+                            console.log(passes);
+                            console.log(numPassesText);
+                            if (passes === "") {
+                                var numPassesLine = $("<p>");
+                                numPassesLine.text(numPassesText);
+                                $(satDiv).append(numPassesLine);
+                            } else {
+                                var numPassesLine = $("<p>");
+                                numPassesLine.text(numPassesText);
+                                $(satDiv).append(numPassesLine);
+                                // passes.forEach(pass => {
 
-                             <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
-                             <p id = "nextGO">NEXT VIEWING: </p>
-                         </button>
-                 </form>
-                 </div>
-                 <br>
-                 </div>
-             </div>
-         </div>`
-
-            );
-            // visPass.attr("id", data[i].satID);
-            satFav.append(visPass);
-            $("#fav-satellite").append(satFav);
-        }
-        $(".fave-visPass").on("click", function(event) {
-            event.preventDefault();
-            var sat = $(this);
-            let satID = sat.attr("id");
-            console.log(satID);
-            window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
-
-        });
-    });
-}
-
-function showCategory(sats) {
-    console.log(sats);
-    const numSats = sats.length;
-    // $("#num-sat").append(``)
-}
+                                // });
+                            }
+                        }
