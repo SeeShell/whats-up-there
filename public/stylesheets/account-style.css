@@ -63,7 +63,8 @@ a:hover {
     border-color: #000000;
 }
 
-.delete-button, .submit-button {
+.delete-button,
+.submit-button {
     background-color: #bb86fc;
     border-color: #000000;
 }
@@ -115,4 +116,5 @@ form.login {
 
 .navTitle {
     font-size: 24px;
+    padding-top: 15px;
 }
