@@ -206,9 +206,10 @@ function displayVisPass(result) {
   // console.log(result);
   const satName = result.info.satname;
   const satId = result.info.satid;
-  const satDiv = `"#nextGO-${satId}"`;
-  const spinnerID = `"#spinner-vis-pass-${satId}"`;
-  $("#spinner-vis-pass-123").hide();
+  const satDiv = `#nextGO-${satId}`;
+  const spinnerID = `#spinner-vis-pass-${satId}`;
+  // $("#spinner-vis-pass-123").hide();
+  $(spinnerID).hide();
   console.log(satDiv);
   // const satId = result.info.satid;
   let numPasses = "";
@@ -232,12 +233,11 @@ function displayVisPass(result) {
   if (passes === "") {
     var numPassesLine = $("<p>");
     numPassesLine.text(numPassesText);
-    $("#nextGO-123").append(numPassesLine);
+    $(satDiv).append(numPassesLine);
   } else {
     var numPassesLine = $("<p>");
     numPassesLine.text(numPassesText);
-    $("#nextGO-123").append(numPassesLine);
-    // $(satDiv).append(numPassesLine);
+    $(satDiv).append(numPassesLine);
     // passes.forEach(pass => {});
   }
 }
