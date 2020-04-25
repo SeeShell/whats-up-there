@@ -8,10 +8,13 @@ h3 {
     color: white;
 }
 
-#bookmark {}
-
 a {
     color: white;
+}
+
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 }
 
 .uk-heading-medium {

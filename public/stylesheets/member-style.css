@@ -9,6 +9,11 @@ h3 {
     opacity: 0.95;
 }
 
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
 a {
     color: white;
 }
