@@ -172,10 +172,24 @@ function getFavorites() {
     for (let i = 0; i < data.length; i++) {
       var satFav = $("<p>");
       satFav.text(`${data[i].nickname}`);
+      let visPass = $("<button>");
+      visPass.addClass("fave-visPass");
+      visPass.html("<span class='uk-margin-small-left' uk-icon='rss'></span>");
+      visPass.attr("id", data.satID);
+      satFav.append(visPass);
       $("#fav-satellite").append(satFav);
     }
   });
 }
+
+$(".fave-visPass").on("click", function(event) {
+  event.preventDefault();
+  var sat = $(this);
+  alert("are you listening?");
+  let satID = sat.attr("id").val();
+  console.log(satID);
+  // window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
+});
 
 function showCategory(sats) {
   console.log(sats);
