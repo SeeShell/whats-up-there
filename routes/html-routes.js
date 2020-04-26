@@ -3,8 +3,8 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   const styleArray = [
-    { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/login-style.css" },
+    { stylesheet: "stylesheets/signup-style.css" },
     { stylesheet: "stylesheets/member-style.css" },
     { stylesheet: "https://js.arcgis.com/4.15/esri/themes/light/main.css" },
     { stylesheet: "stylesheets/account-style.css" }

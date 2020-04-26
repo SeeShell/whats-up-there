@@ -35,42 +35,39 @@ a:hover {
 }
 
 #bookmark-icon {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 0px;
-  margin: 10px;
-  padding-right: 30px;
-  padding-left: 10px;
+  margin: 15px;
+  margin-bottom: 0px;
 }
 
 #sat-icon {
+  padding-top: 10px;
   padding-bottom: 0px;
-  padding-right: 40px;
-  padding-left: 10px;
-  padding-top: 25px;
-  font-size: 35px;
-  margin: 0px;
+  margin: 15px;
+  margin-bottom: 0px;
+  font-size: 40px;
 }
 
 #location-icon {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 0px;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 30px;
+  margin: 15px;
+  margin-bottom: 0px;
 }
 
 #logout-icon {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 0px;
-  margin: 10px;
-  padding-right: 10px;
+  margin: 15px;
+  margin-bottom: 0px;
 }
 
 #user-icon {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 0px;
-  margin: 10px;
-  padding-right: 30px;
+  margin: 15px;
+  margin-bottom: 0px;
 }
 
 .uk-modal-dialog {
@@ -188,6 +185,8 @@ a:hover {
     transform: rotate(359deg);
   }
 }
+
 .navTitle {
   font-size: 24px;
+  padding-top: 15px;
 }
