@@ -91,22 +91,24 @@ window.satApi = {
     });
   },
   getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
-    if ($(spinnerID).is(":hidden")) {
-      console.log("hidden");
-      return;
-    } else {
-      console.log("visible");
-      const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
-      $(function() {
-        $.ajax({
-          url: queryN2YO + visPassQuery + apiKeyN2YO,
-          method: "GET"
-        }).then(result => {
-          // console.log(result);
-          displayVisPass(result);
-        });
+    let spinnerID = `#spinner-vis-pass-${satID}`;
+    console.log($(spinnerID).is(":hidden"));
+    // if ($(spinnerID).is(":hidden")) {
+    //   console.log("hidden");
+    //   return;
+    // } else {
+    //   console.log("visible");
+    const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
+    $(function() {
+      $.ajax({
+        url: queryN2YO + visPassQuery + apiKeyN2YO,
+        method: "GET"
+      }).then(result => {
+        // console.log(result);
+        displayVisPass(result);
       });
-    }
+    });
+    // }
   }
 };
 
@@ -223,7 +225,9 @@ function displayVisPass(result) {
   const satId = result.info.satid;
   const satDiv = `#nextGO-${satId}`;
   let spinnerID = `#spinner-vis-pass-${satId}`;
+  console.log(spinnerID);
   // if ($(spinnerID).is(":visible")) {
+  console.log($(spinnerID).is(":hidden"));
   if ($(spinnerID).is(":hidden")) {
     console.log("hidden");
     return;
@@ -231,7 +235,7 @@ function displayVisPass(result) {
     console.log("visible");
     // console.log("visible");
     //
-    // $(spinnerID).hide();
+    $(spinnerID).hide();
     console.log(satDiv);
     // const satId = result.info.satid;
     let numPasses = "";
