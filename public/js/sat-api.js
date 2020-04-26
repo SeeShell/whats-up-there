@@ -199,17 +199,10 @@ function displayVisPass(result) {
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
     } else {
-      let timestamp = pass.startUTC;
-      let date = new Date(timestamp * 1000);
-      let dateValues = [
-        date.getMonth() + 1,
-        date.getDate(),
-        date.getHours(),
-        date.getMinutes(),
-        date.getSeconds()
-      ];
       let userDate = new Date();
-      let userTimeZone = userDate.getTimezoneOffset() / 60;
+      let userTimeZoneOffsetHour = userDate.getTimezoneOffset() / 60;
+
+      console.log(userTimeZoneOffsetHour);
 
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
@@ -218,13 +211,38 @@ function displayVisPass(result) {
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
       passes.forEach(pass => {
-        let passTime = $("<p>");
-        passTime.addClass("uk-text-left");
-        passTime.addClass("uk-padding-remove");
-        passTimeText = `Start time(UTC): ${pass.startUTC}
+        let timestamp = pass.startUTC;
+        let date = new Date(timestamp * 1000);
+        let dateValues = [
+          date.getMonth() + 1,
+          date.getDate(),
+          date.getHours(),
+          date.getMinutes(),
+          date.getSeconds()
+        ];
+        let visPassHour = dateValues[2] - userTimeZoneOffsetHour;
+        if (visPassHour < 0) {
+          let yesterdaysHour = 24 + visPassHour;
+          let yesterdaysDate = dateValues[1] - 1;
+          let passTime = $("<p>");
+          passTime.addClass("uk-text-left");
+          passTime.addClass("uk-padding-remove");
+          passTimeText = `Date: ${dateValues[0]}/${yesterdaysDate} 
+        Start time: ${yesterdaysHour}:${dateValues[3]}:${dateValues[4]}
         Duration(sec): ${pass.duration}`;
-        passTime.text(passTimeText);
-        $(satDiv).append(passTime);
+          passTime.text(passTimeText);
+          $(satDiv).append(passTime);
+        } else {
+          console.log(dateValues);
+          let passTime = $("<p>");
+          passTime.addClass("uk-text-left");
+          passTime.addClass("uk-padding-remove");
+          passTimeText = `Date: ${dateValues[0]}/${dateValues[1]} 
+          Start time: ${visPassHour}:${dateValues[3]}:${dateValues[4]}
+          Duration(sec): ${pass.duration}`;
+          passTime.text(passTimeText);
+          $(satDiv).append(passTime);
+        }
       });
       //   }
       // } else {
