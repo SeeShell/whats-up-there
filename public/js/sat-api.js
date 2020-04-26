@@ -76,7 +76,6 @@ window.satApi = {
         url: queryN2YO + aboveQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        // console.log(result.above);
         let sats = result.above;
         if (source === "members") {
           getAboveHomePage(sats, 15);
@@ -92,7 +91,6 @@ window.satApi = {
   },
   getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
     let spinnerID = `#spinner-vis-pass-${satID}`;
-    console.log($(spinnerID).is(":hidden"));
     // if ($(spinnerID).is(":hidden")) {
     //   console.log("hidden");
     //   return;
@@ -199,8 +197,6 @@ function getFavorites() {
       var sat = $(this);
       let satID = sat.attr("id");
       let spinnerID = `#spinner-vis-pass-${satID}`;
-      console.log("spinnerID = " + spinnerID);
-      console.log(satID);
       // if ($(spinnerID).is(":hidden")) {
       //   console.log("hidden");
       //   return;
@@ -220,24 +216,16 @@ function showCategory(sats) {
 }
 
 function displayVisPass(result) {
-  console.log(result);
   const satName = result.info.satname;
   const satId = result.info.satid;
   const satDiv = `#nextGO-${satId}`;
   let spinnerID = `#spinner-vis-pass-${satId}`;
-  console.log(spinnerID);
-  // if ($(spinnerID).is(":visible")) {
-  console.log($(spinnerID).is(":hidden"));
   if ($(spinnerID).is(":hidden")) {
     console.log("hidden");
     return;
   } else {
     console.log("visible");
-    // console.log("visible");
-    //
     $(spinnerID).hide();
-    console.log(satDiv);
-    // const satId = result.info.satid;
     let numPasses = "";
     let passes = "";
     if (!result.hasOwnProperty("passes")) {
