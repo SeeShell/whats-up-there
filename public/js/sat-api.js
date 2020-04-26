@@ -4,7 +4,6 @@ const userAlt = 0;
 var currentUserID = [];
 $.get("/api/user_data").then(function(data) {
   currentUserID.push(data.id);
-  console.log(userID);
 });
 window.satApi = {
   //for future development of sat trajectory visualization
