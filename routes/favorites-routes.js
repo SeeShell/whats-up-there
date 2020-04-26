@@ -7,8 +7,7 @@ module.exports = function(app) {
       res.json({});
     } else {
       db.Favorites.findAll({
-        includes: db.Users,
-        where: db.Favorites.UserId === req.user.id
+        where: { UserId: req.user.id }
       }).then(userAll => {
         const userFavs = userAll.map(fav => {
           return {
