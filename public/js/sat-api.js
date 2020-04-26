@@ -60,7 +60,6 @@ function getAboveHomePage(sats, searchRad) {
   numSats = sats.length;
   numSatsMessage = `<p>There are ${numSats} satellites above you in a ${searchRad}&#176; search radius</p>`;
   $("#num-sats").html(numSatsMessage);
-  //.append
   const aboveDataHome = sats;
   // console.log(aboveDataHome);
   $("#spinner").hide();
