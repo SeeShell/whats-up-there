@@ -1,66 +1,70 @@
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
 }
 
 a:hover {
-    color: #bb86fc;
-    text-decoration: none;
+  color: #bb86fc;
+  text-decoration: none;
 }
 
 #signuptitle {
-    font-size: 20px;
-    padding-top: 0px;
-    color: white;
+  font-size: 20px;
+  padding-top: 0px;
+  color: white;
 }
 
 a {
-    color: #bb86fc;
+  color: #bb86fc;
 }
 
 .filter {
-    -webkit-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
-    height: 50px;
-    width: 50px;
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+  height: 50px;
+  width: 50px;
 }
 
 .navTitle {
-    font-size: 40px;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
-    padding-top: 10px;
+  font-size: 40px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  padding-top: 10px;
 }
 
 .uk-card {
-    background-color: #303030da;
-    border-radius: 5px;
+  background-color: #303030da;
+  border-radius: 5px;
 }
 
 .uk-container {
-    background-color: #303030da;
-    border-radius: 5px;
+  background-color: #303030da;
+  border-radius: 5px;
 }
 
 .uk-card-body {
-    margin: auto;
+  margin: auto;
 }
 
 .uk-heading-medium {
-    text-align: center;
-    padding-top: 10px;
-    font-size: 40px;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
-    padding-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 40px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  padding-top: 10px;
 }
 
 .uk-button {
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: auto;
-    color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: auto;
+  color: white;
 }
 
 .uk-button:hover {
-    color: white;
+  color: white;
+}
+
+.login-field {
+  padding-bottom: 0px;
 }
