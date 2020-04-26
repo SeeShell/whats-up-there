@@ -105,6 +105,12 @@ window.satApi = {
 };
 
 function getAboveHomePage(sats, searchRad) {
+  if (sats === undefined) {
+    numSatsMessage = `<p>There are 0 satellites above you in a ${searchRad}&#176; search radius</p>`;
+    $("#num-sats").html(numSatsMessage);
+    $("#spinner").hide();
+    return;
+  }
   numSats = sats.length;
   numSatsMessage = `<p>There are ${numSats} satellites above you in a ${searchRad}&#176; search radius</p>`;
   $("#num-sats").html(numSatsMessage);
