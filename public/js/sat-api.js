@@ -218,7 +218,7 @@ function displayVisPass(result) {
           passTime.addClass("uk-text-left");
           passTime.addClass("uk-margin-remove");
           passTimeText = `Date: ${dateValues[0]}/${yesterdaysDate} 
-          | Start time: ${yesterdaysHour}:${dateValues[3]}:${dateValues[4]}
+          | Start time: ${yesterdaysHour}h${dateValues[3]}m${dateValues[4]}s
         | Duration(sec): ${pass.duration}`;
           passTime.text(passTimeText);
           $(satDiv).append(passTime);
@@ -228,7 +228,7 @@ function displayVisPass(result) {
           passTime.addClass("uk-text-left");
           passTime.addClass("uk-margin-remove");
           passTimeText = `Date: ${dateValues[0]}/${dateValues[1]} 
-          | Start time: ${visPassHour}:${dateValues[3]}:${dateValues[4]}
+          | Start time: ${visPassHour}h${dateValues[3]}m${dateValues[4]}s
           | Duration(sec): ${pass.duration}`;
           passTime.text(passTimeText);
           $(satDiv).append(passTime);

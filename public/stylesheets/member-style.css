@@ -93,6 +93,10 @@ a:hover {
   padding: 30px;
 }
 
+[class*="uk-modal-close-"]:first-child + * {
+  margin-top: 10px;
+}
+
 #favorite-city,
 #user {
   font-weight: 300;
