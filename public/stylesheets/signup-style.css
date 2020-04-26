@@ -60,3 +60,7 @@ a {
     margin-top: 0px;
     padding-bottom: 10px;
 }
+
+.alert {
+    background-color: #30303000;
+}
