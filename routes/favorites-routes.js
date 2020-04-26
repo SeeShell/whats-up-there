@@ -2,6 +2,7 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/user_favorites", function(req, res) {
+    console.log(req.user);
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
