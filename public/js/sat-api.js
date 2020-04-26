@@ -199,6 +199,18 @@ function displayVisPass(result) {
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
     } else {
+      let timestamp = pass.startUTC;
+      let date = new Date(timestamp * 1000);
+      let dateValues = [
+        date.getMonth() + 1,
+        date.getDate(),
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds()
+      ];
+      let userDate = new Date();
+      let userTimeZone = userDate.getTimezoneOffset() / 60;
+
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
