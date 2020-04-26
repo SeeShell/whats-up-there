@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+.msg {
+    color: white;
+}
+
 a:hover {
     color: #bb86fc;
     text-decoration: none;
@@ -41,6 +45,10 @@ a {
 .uk-button {
     font-family: 'Roboto Condensed', sans-serif;
     margin: auto;
+    color: white;
+}
+
+.uk-button:visited {
     color: white;
 }
 
