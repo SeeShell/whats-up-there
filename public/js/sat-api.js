@@ -3,6 +3,7 @@ const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
 window.satApi = {
+  //for future development of sat trajectory visualization
   getPosition: (userLon, userLat, satID) => {
     let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
     $(function() {
@@ -15,21 +16,18 @@ window.satApi = {
     });
   },
   getAbove: (userLon, userLat, categoryID, searchRadius, source) => {
-    // let searchRadius = 15;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
     $(function() {
       $.ajax({
         url: queryN2YO + aboveQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        // console.log(result.above);
         let sats = result.above;
         if (source === "members") {
           getAboveHomePage(sats, 15);
         } else if (source === "maps") {
           sendAnswers(sats);
         } else if (source === "category") {
-          // showCategory(sats);
           getAboveHomePage(sats, 45);
         }
       });
@@ -37,6 +35,12 @@ window.satApi = {
     });
   },
   getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
+    let spinnerID = `#spinner-vis-pass-${satID}`;
+    // if ($(spinnerID).is(":hidden")) {
+    //   console.log("hidden");
+    //   return;
+    // } else {
+    //   console.log("visible");
     const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
     $(function() {
       $.ajax({
@@ -47,6 +51,7 @@ window.satApi = {
         displayVisPass(result);
       });
     });
+    // }
   }
 };
 
@@ -61,7 +66,6 @@ function getAboveHomePage(sats, searchRad) {
   numSatsMessage = `<p>There are ${numSats} satellites above you in a ${searchRad}&#176; search radius</p>`;
   $("#num-sats").html(numSatsMessage);
   const aboveDataHome = sats;
-  // console.log(aboveDataHome);
   $("#spinner").hide();
   $("#satellite-display").empty();
   var userID = "";
@@ -124,7 +128,7 @@ function getFavorites() {
       <div id="satellite-favorite-${data[i].satID}" class="uk-flex-top" uk-modal>
      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
          <button class="uk-modal-close-outside" type="button" uk-close></button>
-                     <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
+                     <button class="vis-pass-text uk-button uk-button-default" id="drop" class="button" tabindex="-1">
                      <div id = "nextGO-${data[i].satID}"><span id="spinner-vis-pass-${data[i].satID}" style="display: block">Fetching data...<i class="fas fa-satellite rotate uk-margin-small-left"></i></div>
                  </button>
          </form>
@@ -142,8 +146,6 @@ function getFavorites() {
       var sat = $(this);
       let satID = sat.attr("id");
       let spinnerID = `#spinner-vis-pass-${satID}`;
-      console.log("spinnerID = " + spinnerID);
-      console.log(satID);
       // if ($(spinnerID).is(":hidden")) {
       //   console.log("hidden");
       //   return;
@@ -156,29 +158,17 @@ function getFavorites() {
   });
 }
 
-function showCategory(sats) {
-  console.log(sats);
-  const numSats = sats.length;
-  // $("#num-sat").append(``)
-}
-
 function displayVisPass(result) {
-  console.log(result);
   const satName = result.info.satname;
   const satId = result.info.satid;
   const satDiv = `#nextGO-${satId}`;
   let spinnerID = `#spinner-vis-pass-${satId}`;
-  // if ($(spinnerID).is(":visible")) {
   if ($(spinnerID).is(":hidden")) {
     console.log("hidden");
     return;
   } else {
     console.log("visible");
-    // console.log("visible");
-    //
     $(spinnerID).hide();
-    console.log(satDiv);
-    // const satId = result.info.satid;
     let numPasses = "";
     let passes = "";
     if (!result.hasOwnProperty("passes")) {
@@ -195,37 +185,61 @@ function displayVisPass(result) {
       });
       numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
     }
-    console.log(passes);
-    // console.log(numPassesText);
     if (passes === "") {
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
-      // numPassesLine.addClass("uk-margin-remove-bottom");
+      numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
     } else {
+      let userDate = new Date();
+      let userTimeZoneOffsetHour = userDate.getTimezoneOffset() / 60;
+
+      console.log(userTimeZoneOffsetHour);
+
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
+      numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
       passes.forEach(pass => {
-        let passTime = $("<p>");
-        passTime.addClass("uk-text-left");
-        passTime.addClass("uk-padding-remove");
-        passTimeText = `Start time(UTC): ${pass.startUTC}
-        Duration(sec): ${pass.duration}`;
-        passTime.text(passTimeText);
-        $(satDiv).append(passTime);
+        let timestamp = pass.startUTC;
+        let date = new Date(timestamp * 1000);
+        let dateValues = [
+          date.getMonth() + 1,
+          date.getDate(),
+          date.getHours(),
+          date.getMinutes(),
+          date.getSeconds()
+        ];
+        let visPassHour = dateValues[2] - userTimeZoneOffsetHour;
+        if (visPassHour < 0) {
+          let yesterdaysHour = 24 + visPassHour;
+          let yesterdaysDate = dateValues[1] - 1;
+          let passTime = $("<p>");
+          passTime.addClass("uk-text-left");
+          passTime.addClass("uk-margin-remove");
+          passTimeText = `Date: ${dateValues[0]}/${yesterdaysDate} 
+          | Start time: ${yesterdaysHour}h${dateValues[3]}m${dateValues[4]}s
+        | Duration(sec): ${pass.duration}`;
+          passTime.text(passTimeText);
+          $(satDiv).append(passTime);
+        } else {
+          console.log(dateValues);
+          let passTime = $("<p>");
+          passTime.addClass("uk-text-left");
+          passTime.addClass("uk-margin-remove");
+          passTimeText = `Date: ${dateValues[0]}/${dateValues[1]} 
+          | Start time: ${visPassHour}h${dateValues[3]}m${dateValues[4]}s
+          | Duration(sec): ${pass.duration}`;
+          passTime.text(passTimeText);
+          $(satDiv).append(passTime);
+        }
       });
-      //   }
-      // } else {
-      //   console.log("hidden");
-      //   return;
-      // }
     }
   }
 }
