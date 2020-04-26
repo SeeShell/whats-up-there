@@ -8,6 +8,12 @@ a:hover {
     text-decoration: none;
 }
 
+#signuptitle {
+    font-size: 20px;
+    padding-top: 0px;
+    color: white;
+}
+
 a {
     color: #bb86fc;
 }
@@ -15,6 +21,15 @@ a {
 .filter {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
+    height: 50px;
+    width: 50px;
+}
+
+.navTitle {
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    padding-top: 10px;
 }
 
 .uk-card {
@@ -32,10 +47,14 @@ a {
 }
 
 .uk-heading-medium {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
     padding-top: 10px;
 }
 
-.uk-heading-medium,
 .uk-button {
     font-family: 'Roboto Condensed', sans-serif;
     margin: auto;

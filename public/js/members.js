@@ -28,7 +28,9 @@ function showCity(userLat, userLon) {
     var userLatFix = userLat.toFixed(2);
     var userLonFix = userLon.toFixed(2);
     $("#favorite-city").append(city);
-    $("#latlon").append("COORDINATES: " + userLatFix + ", " + userLonFix);
+    $("#latlon").append(
+      "COORDINATES: " + userLatFix + "°, " + userLonFix + "°"
+    );
   });
 }
 
