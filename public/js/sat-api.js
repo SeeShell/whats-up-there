@@ -169,8 +169,8 @@ function getFavorites() {
       satFav.text(`${data[i].nickname}`);
       let visPass = $("<span>");
       visPass.html(
-        `<a href="#satellite-favorite" uk-toggle id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>
-      <div id="satellite-favorite" class="uk-flex-top" uk-modal>
+        `<a href="#satellite-favorite-${data[i].satID}" uk-toggle id='${data[i].satID}' class='uk-margin-small-left fave-visPass' uk-icon='rss'></a>
+      <div id="satellite-favorite-${data[i].satID}" class="uk-flex-top" uk-modal>
      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
          <button class="uk-modal-close-outside" type="button" uk-close></button>
                      <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
@@ -190,7 +190,16 @@ function getFavorites() {
       event.preventDefault();
       var sat = $(this);
       let satID = sat.attr("id");
+      let spinnerID = `#spinner-vis-pass-${satID}`;
+      console.log("spinnerID = " + spinnerID);
       console.log(satID);
+      // if ($(spinnerID).is(":hidden")) {
+      //   console.log("hidden");
+      //   return;
+      // } else {
+      //   console.log("visible");
+      //   window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
+      // }
       window.satApi.getVisualPass(userLat, userLon, satID, userAlt, 2, 100);
     });
   });
@@ -203,43 +212,69 @@ function showCategory(sats) {
 }
 
 function displayVisPass(result) {
-  // console.log(result);
+  console.log(result);
   const satName = result.info.satname;
   const satId = result.info.satid;
   const satDiv = `#nextGO-${satId}`;
-  const spinnerID = `#spinner-vis-pass-${satId}`;
-  // $("#spinner-vis-pass-123").hide();
-  $(spinnerID).hide();
-  console.log(satDiv);
-  // const satId = result.info.satid;
-  let numPasses = "";
-  let passes = "";
-  if (!result.passes) {
-    numPasses = 0;
-    numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
-  } else if (result.passes.length > 0) {
-    numPasses = result.passes.length;
-    passes = result.passes.map(pass => {
-      return {
-        startUTC: pass.startUTC,
-        endUTC: pass.endUTC,
-        duration: pass.duration
-      };
-    });
-    numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
-  }
-  console.log(passes);
-  console.log(numPassesText);
-  if (passes === "") {
-    var numPassesLine = $("<p>");
-    numPassesLine.text(numPassesText);
-    $(satDiv).append(numPassesLine);
+  let spinnerID = `#spinner-vis-pass-${satId}`;
+  // if ($(spinnerID).is(":visible")) {
+  if ($(spinnerID).is(":hidden")) {
+    console.log("hidden");
+    return;
   } else {
-    var numPassesLine = $("<p>");
-    numPassesLine.text(numPassesText);
-    $(satDiv).append(numPassesLine);
-    // passes.forEach(pass => {
-
-    // });
+    console.log("visible");
+    // console.log("visible");
+    //
+    $(spinnerID).hide();
+    console.log(satDiv);
+    // const satId = result.info.satid;
+    let numPasses = "";
+    let passes = "";
+    if (!result.hasOwnProperty("passes")) {
+      numPasses = 0;
+      numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
+    } else if (result.passes.length > 0) {
+      numPasses = result.passes.length;
+      passes = result.passes.map(pass => {
+        return {
+          startUTC: pass.startUTC,
+          endUTC: pass.endUTC,
+          duration: pass.duration
+        };
+      });
+      numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
+    }
+    console.log(passes);
+    // console.log(numPassesText);
+    if (passes === "") {
+      let numPassesLine = $("<p>");
+      numPassesLine.addClass("uk-text-left");
+      numPassesLine.addClass("uk-padding-remove");
+      // numPassesLine.addClass("uk-margin-remove-bottom");
+      numPassesLine.text(numPassesText);
+      $(satDiv).append(numPassesLine);
+      console.log(numPassesText);
+    } else {
+      let numPassesLine = $("<p>");
+      numPassesLine.addClass("uk-text-left");
+      numPassesLine.addClass("uk-padding-remove");
+      numPassesLine.text(numPassesText);
+      $(satDiv).append(numPassesLine);
+      console.log(numPassesText);
+      passes.forEach(pass => {
+        let passTime = $("<p>");
+        passTime.addClass("uk-text-left");
+        passTime.addClass("uk-padding-remove");
+        passTimeText = `Start time(UTC): ${pass.startUTC}
+        Duration(sec): ${pass.duration}`;
+        passTime.text(passTimeText);
+        $(satDiv).append(passTime);
+      });
+      //   }
+      // } else {
+      //   console.log("hidden");
+      //   return;
+      // }
+    }
   }
 }
