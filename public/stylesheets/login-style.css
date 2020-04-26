@@ -69,6 +69,10 @@ a {
   padding-bottom: 0px;
 }
 
+.alert {
+  background-color: #30303000;
+}
+
 .star{
   background-color: white;
   width: 45px;
