@@ -8,12 +8,6 @@ a:hover {
     text-decoration: none;
 }
 
-#signuptitle {
-    font-size: 20px;
-    padding-top: 0px;
-    color: white;
-}
-
 a {
     color: #bb86fc;
 }
@@ -40,12 +34,7 @@ a {
 }
 
 .uk-heading-medium {
-    text-align: center;
-    padding-top: 10px;
-    font-size: 40px;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .uk-heading-medium,
@@ -57,4 +46,17 @@ a {
 
 .uk-button:hover {
     color: white;
+}
+
+.navTitle {
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    padding-top: 20px;
+}
+
+#signuptitle {
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 10px;
 }
