@@ -74,8 +74,8 @@ a {
   width: 45px;
   height: 2px;
   position: absolute ;
-  top: -600px;
-  left: 300%;
+  top: -200px;
+  left: 200%;
   animation: shoot 5s linear infinite;
   opacity: 0%;
   transform: rotate(-20deg);

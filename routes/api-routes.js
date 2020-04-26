@@ -30,18 +30,6 @@ module.exports = function(app) {
       });
   });
 
-  // app.put("/api/password_updated", function (req, res) {
-  //   var password = req.body.password
-
-  //   // update it with hash
-  //   bcrypt.hash(password, (hash) => {
-  //     req.body.password = hash
-
-  //     // then update
-  //     User.findByIdAndUpdate({}, req.body, function (err, ...); // then update
-  //   })
-  // })
-
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();

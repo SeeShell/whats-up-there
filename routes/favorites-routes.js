@@ -2,14 +2,12 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/user_favorites", function(req, res) {
-    console.log(req.user);
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
       db.Favorites.findAll({
-        includes: db.Users,
-        where: db.Favorites.UserId === req.user.id
+        where: { UserId: req.user.id }
       }).then(userAll => {
         const userFavs = userAll.map(fav => {
           return {
