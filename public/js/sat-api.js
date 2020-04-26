@@ -3,6 +3,7 @@ const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 
 window.satApi = {
+  //for future development of sat trajectory visualization
   getPosition: (userLon, userLat, satID) => {
     let positionQuery = `/positions/${satID}/${userLat}/${userLon}/${userAlt}/50`;
     $(function() {
@@ -15,7 +16,6 @@ window.satApi = {
     });
   },
   getAbove: (userLon, userLat, categoryID, searchRadius, source) => {
-    // let searchRadius = 15;
     let aboveQuery = `/above/${userLat}/${userLon}/${userAlt}/${searchRadius}/${categoryID}`;
     $(function() {
       $.ajax({
@@ -28,7 +28,6 @@ window.satApi = {
         } else if (source === "maps") {
           sendAnswers(sats);
         } else if (source === "category") {
-          // showCategory(sats);
           getAboveHomePage(sats, 45);
         }
       });
@@ -60,9 +59,7 @@ function getAboveHomePage(sats, searchRad) {
   numSats = sats.length;
   numSatsMessage = `<p>There are ${numSats} satellites above you in a ${searchRad}&#176; search radius</p>`;
   $("#num-sats").html(numSatsMessage);
-  //.append
   const aboveDataHome = sats;
-  // console.log(aboveDataHome);
   $("#spinner").hide();
   $("#satellite-display").empty();
   var userID = "";
@@ -125,7 +122,7 @@ function getFavorites() {
       <div id="satellite-favorite-${data[i].satID}" class="uk-flex-top" uk-modal>
      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
          <button class="uk-modal-close-outside" type="button" uk-close></button>
-                     <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
+                     <button class="vis-pass-text uk-button uk-button-default" id="drop" class="button" tabindex="-1">
                      <div id = "nextGO-${data[i].satID}"><span id="spinner-vis-pass-${data[i].satID}" style="display: block">Fetching data...<i class="fas fa-satellite rotate uk-margin-small-left"></i></div>
                  </button>
          </form>
@@ -155,12 +152,6 @@ function getFavorites() {
   });
 }
 
-function showCategory(sats) {
-  console.log(sats);
-  const numSats = sats.length;
-  // $("#num-sat").append(``)
-}
-
 function displayVisPass(result) {
   const satName = result.info.satname;
   const satId = result.info.satid;
@@ -188,13 +179,11 @@ function displayVisPass(result) {
       });
       numPassesText = `${satName} will pass ${numPasses} times in the next 2 days`;
     }
-    console.log(passes);
-    // console.log(numPassesText);
     if (passes === "") {
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
-      // numPassesLine.addClass("uk-margin-remove-bottom");
+      numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
@@ -207,6 +196,7 @@ function displayVisPass(result) {
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
+      numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
       console.log(numPassesText);
@@ -226,29 +216,24 @@ function displayVisPass(result) {
           let yesterdaysDate = dateValues[1] - 1;
           let passTime = $("<p>");
           passTime.addClass("uk-text-left");
-          passTime.addClass("uk-padding-remove");
+          passTime.addClass("uk-margin-remove");
           passTimeText = `Date: ${dateValues[0]}/${yesterdaysDate} 
-        Start time: ${yesterdaysHour}:${dateValues[3]}:${dateValues[4]}
-        Duration(sec): ${pass.duration}`;
+          | Start time: ${yesterdaysHour}:${dateValues[3]}:${dateValues[4]}
+        | Duration(sec): ${pass.duration}`;
           passTime.text(passTimeText);
           $(satDiv).append(passTime);
         } else {
           console.log(dateValues);
           let passTime = $("<p>");
           passTime.addClass("uk-text-left");
-          passTime.addClass("uk-padding-remove");
+          passTime.addClass("uk-margin-remove");
           passTimeText = `Date: ${dateValues[0]}/${dateValues[1]} 
-          Start time: ${visPassHour}:${dateValues[3]}:${dateValues[4]}
-          Duration(sec): ${pass.duration}`;
+          | Start time: ${visPassHour}:${dateValues[3]}:${dateValues[4]}
+          | Duration(sec): ${pass.duration}`;
           passTime.text(passTimeText);
           $(satDiv).append(passTime);
         }
       });
-      //   }
-      // } else {
-      //   console.log("hidden");
-      //   return;
-      // }
     }
   }
 }

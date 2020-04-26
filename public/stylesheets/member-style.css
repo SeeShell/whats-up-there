@@ -1,179 +1,189 @@
 body,
 h3 {
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .uk-offcanvas-bar {
-    background-color: #303030e1;
-    opacity: 0.95;
+  background-color: #303030e1;
+  opacity: 0.95;
 }
 
 .uk-sticky-placeholder {
-    margin: 0px;
+  margin: 0px;
 }
 
 .filter {
-    -webkit-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
-    height: 28px;
-    width: 28px;
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+  height: 28px;
+  width: 28px;
 }
 
 a {
-    color: white;
+  color: white;
 }
 
 a:hover {
-    color: #bb86fc;
-    text-decoration: none;
+  color: #bb86fc;
+  text-decoration: none;
 }
 
 #bookmark-icon1 {
-    margin: 0px;
-    padding-right: 10px;
+  margin: 0px;
+  padding-right: 10px;
 }
 
 #bookmark-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-right: 30px;
-    padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: 10px;
+  padding-right: 30px;
+  padding-left: 10px;
 }
 
 #sat-icon {
-    padding-bottom: 0px;
-    padding-right: 40px;
-    padding-left: 10px;
-    padding-top: 25px;
-    font-size: 35px;
-    margin: 0px;
+  padding-bottom: 0px;
+  padding-right: 40px;
+  padding-left: 10px;
+  padding-top: 25px;
+  font-size: 35px;
+  margin: 0px;
 }
 
 #location-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-left: 10px;
-    padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 
 #logout-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: 10px;
+  padding-right: 10px;
 }
 
 #user-icon {
-    padding-top: 15px;
-    padding-bottom: 0px;
-    margin: 10px;
-    padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: 10px;
+  padding-right: 30px;
 }
 
 .uk-modal-dialog {
-    background-color: #303030e1;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-    text-align: center;
+  background-color: #303030e1;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  text-align: center;
+}
+
+.vis-pass-title {
+  margin: 0 0 20px 0;
+}
+
+.vis-pass-text {
+  text-transform: none;
+  line-height: 24px;
+  padding: 30px;
 }
 
 #favorite-city,
 #user {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 #satellite-display {
-    background-color: rgba(255, 192, 203, 0);
-    height: 250px;
+  background-color: rgba(255, 192, 203, 0);
+  height: 250px;
 }
 
 #user {
-    font-size: 30px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px;
-    margin: 0px;
+  font-size: 30px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px;
+  margin: 0px;
 }
 
 #spinner {
-    font-size: 20px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px;
-    margin: 0px;
+  font-size: 20px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px;
+  margin: 0px;
 }
 
 #latlon {
-    font-size: 12px;
-    font-weight: bold;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px 18px 0px 24px;
-    margin: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px 18px 0px 24px;
+  margin: 0px;
 }
 
 #time,
 #city,
 #favorite-city,
 #spinner {
-    font-size: 24px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px 18px 0px 24px;
-    margin: 0px;
+  font-size: 24px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px 18px 0px 24px;
+  margin: 0px;
 }
 
 #num-sats {
-    font-size: 18px;
-    background-color: rgba(255, 192, 203, 0);
-    text-align: center;
-    color: white;
-    padding: 0px 18px 0px 24px;
+  font-size: 18px;
+  background-color: rgba(255, 192, 203, 0);
+  text-align: center;
+  color: white;
+  padding: 0px 18px 0px 24px;
 }
 
 #navBar {
-    background-color: #303030da !important;
-    color: white !important;
+  background-color: #303030da !important;
+  color: white !important;
 }
 
 .uk-card-body {
-    margin: auto;
+  margin: auto;
 }
 
 .uk-heading-medium,
 .uk-button,
 .uk-heading-small {
-    margin: 10px;
-    font-family: "Roboto Condensed", sans-serif;
-    color: white;
+  margin: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
 }
 
 .uk-button:hover {
-    color: white;
+  color: white;
 }
 
 .rotate {
-    animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite linear;
 }
 
 @keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 .navTitle {
-    font-size: 24px;
+  font-size: 24px;
 }
