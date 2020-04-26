@@ -91,16 +91,22 @@ window.satApi = {
     });
   },
   getVisualPass: (userLat, userLon, satID, userAlt, days, minVisSeconds) => {
-    const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
-    $(function() {
-      $.ajax({
-        url: queryN2YO + visPassQuery + apiKeyN2YO,
-        method: "GET"
-      }).then(result => {
-        // console.log(result);
-        displayVisPass(result);
+    if ($(spinnerID).is(":hidden")) {
+      console.log("hidden");
+      return;
+    } else {
+      console.log("visible");
+      const visPassQuery = `/visualpasses/${satID}/${userLat}/${userLon}/${userAlt}/${days}/${minVisSeconds}`;
+      $(function() {
+        $.ajax({
+          url: queryN2YO + visPassQuery + apiKeyN2YO,
+          method: "GET"
+        }).then(result => {
+          // console.log(result);
+          displayVisPass(result);
+        });
       });
-    });
+    }
   }
 };
 
@@ -225,7 +231,7 @@ function displayVisPass(result) {
     console.log("visible");
     // console.log("visible");
     //
-    $(spinnerID).hide();
+    // $(spinnerID).hide();
     console.log(satDiv);
     // const satId = result.info.satid;
     let numPasses = "";
