@@ -16,9 +16,9 @@ $(document).ready(function() {
         var list = $("<li>");
         list.html(
           `
-          <a class="uk-accordion-title uk-light uk-text-center" href="#">${data[i].nickname}</a>
+          <a class="uk-accordion-title uk-light uk-text-center" style="font-size:15px;" href="#">${data[i].nickname}</a>
           <div class="uk-accordion-content uk-column-1-2 " style="text-align: center;">
-            <p class="uk-text-left uk-align-center" style="margin-bottom: 0;">ID: ${data[i].satID}<br>
+            <p class="uk-text-left uk-align-center" style="margin-bottom: 0;font-size:12px;">ID: ${data[i].satID}<br>
             Name: ${data[i].satName}</p>
             <form>
               <div class="uk-margin">

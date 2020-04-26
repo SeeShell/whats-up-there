@@ -6,7 +6,6 @@ $.get("/api/user_data").then(function(data) {
   currentUserID.push(data.id);
   console.log(userID);
 });
-
 window.satApi = {
   //for future development of sat trajectory visualization
   getPosition: (userLon, userLat, satID) => {
@@ -74,30 +73,32 @@ function getAboveHomePage(sats, searchRad) {
   $("#spinner").hide();
   $("#satellite-display").empty();
   for (let i = 0; i < aboveDataHome.length; i++) {
-    var percentage1 = Math.floor(Math.random() * 100) + 1; //40
-    var percentage2 = Math.floor(Math.random() * 100) + 1; //20
+    var percentage1 = Math.floor(Math.random() * 85) + 5;
+    var percentage2 = Math.floor(Math.random() * 52) + 10;
+    var add1 = Math.floor(Math.random() * 5) + 1;
+    var add2 = Math.floor(Math.random() * 5) + 1;
     var markerLink = `<a href="#satellite${i +
       1}" uk-toggle class="uk-position-absolute uk-transform-center" style="left: 
-          ${i + percentage1 + 5}%; top: 
-          ${i + percentage2 + 5}%" href="#" uk-marker>
-      <i class="fas fa-satellite"></i></a>
-      <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
-        1}">
-        <button class="uk-modal-close-outside" type="button" uk-close></button>
-        <p id="satellite-${i + 1}-name"style="font-weight: bold;">
-        ${aboveDataHome[i].satname}</p>
-        <p id="satellite-${i + 1}-launch">SAT ID : 
-        ${aboveDataHome[i].satid}
-        <p id="satellite-${i + 1}-launch">LAUNCH : 
-        ${aboveDataHome[i].launchDate}</p>
-        <button class="sat" 
-        data-name="${aboveDataHome[i].satname}" 
-        data-id="${aboveDataHome[i].satid}" 
-        uk-icon="icon: bookmark; ratio: 2"></button>
-        <br>
-        <a href="/maps"> VIEW MAP</a>
-        </div> </div>`;
+        ${percentage1 + add1}%; bottom: 
+        ${percentage2 + add2}%" href="#" uk-marker>
+    <i class="fas fa-satellite"></i></a>
+    <div id="satellite${i + 1}" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical" id="satellite${i +
+      1}">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <p id="satellite-${i + 1}-name"style="font-weight: bold;">
+      ${aboveDataHome[i].satname}</p>
+      <p id="satellite-${i + 1}-launch">SAT ID : 
+      ${aboveDataHome[i].satid}
+      <p id="satellite-${i + 1}-launch">LAUNCH : 
+      ${aboveDataHome[i].launchDate}</p>
+      <button class="sat" 
+      data-name="${aboveDataHome[i].satname}" 
+      data-id="${aboveDataHome[i].satid}" 
+      uk-icon="icon: bookmark; ratio: 2"></button>
+      <br>
+      <a href="/maps"> VIEW MAP</a>
+      </div> </div>`;
     $("#satellite-display").append(markerLink);
   }
   $(".sat").on("click", function(event) {
@@ -197,9 +198,7 @@ function displayVisPass(result) {
     } else {
       let userDate = new Date();
       let userTimeZoneOffsetHour = userDate.getTimezoneOffset() / 60;
-
       console.log(userTimeZoneOffsetHour);
-
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");

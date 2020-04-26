@@ -70,6 +70,14 @@ a:hover {
   margin-bottom: 0px;
 }
 
+#satDisplay {
+    height: 600px;
+}
+
+#satellite-display {
+    height: 500px;
+}
+
 .uk-modal-dialog {
   background-color: #303030e1;
   padding-right: 10px;
