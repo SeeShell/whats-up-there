@@ -7,90 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.1/dist/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/account-style.css">
+    <link rel="stylesheet" href="../stylesheets/account-style.css">
 </head>
 
 <body>
-
     <div class="uk-cover-container" uk-height-viewport>
-        <img src="imgs/ground-space.jpg" alt="" uk-cover id="aerial-image">
-
+        <img src="../imgs/space.jpg" alt="" uk-cover id="aerial-image">
+      
         <!-- TOP NAV -->
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: #transparent-sticky-navbar">
-            <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
-                <div class="uk-navbar-center">
-
-                    <ul class="uk-navbar-nav">
-                        <p class="uk-heading-small">what's up there?
-                            <img src="imgs/solar-system.png">
-                        </p>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
-
-        <!-- User Panel -->
-        <div class="uk-align-center">
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="user">
-            </div>
-            <div class="uk-card uk-card uk-card-default uk-card-body uk-align-center" id="favorites-list">
-                <h5 class="uk-heading-small uk-text-center">Favorites</h2>
-                    <hr>
-                    <ul uk-accordion id="list">
-                    </ul>
-            </div>
-        </div>
-
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-            <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
-                <div class="uk-navbar-center">
-                    <ul class="uk-navbar-nav">
-
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span href="/maps" uk-icon="icon: world; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></a></li>
-                  </div>
-
-                    <div class="uk-animation-toggle" tabindex="0">
-                      <li><span href="/memebers" uk-icon="icon: location; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></a></li>
-                  </div>
-
+          <nav class="uk-navbar-container" uk-navbar="dropbar: true;" id="navBar" style="position: relative; z-index: 980;">
+            <div class="uk-navbar-center">
+      
+              <ul class="uk-navbar-nav">
+                <p class="navTitle">what's up there? <img src="../imgs/solar-system.png" class="filter uk-margin-small-left"> </p>
               </ul>
-              </div>
-      </nav>
-      </div>
-
-    <!-- BOTTOM NAV -->
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-      <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar"
-        style="position: relative; z-index: 980;">
-        <div class="uk-navbar-center">
-          <ul class="uk-navbar-nav">
-            <div class="uk-animation-toggle" tabindex="0">
-              <li><span uk-icon="icon: bookmark; ratio: 2" id="icon1"
-                  class="uk-align-left uk-animation-scale-up"></span></li>
-                        </div>
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: location; ratio: 2" id="icon2" class="uk-align-center uk-animation-scale-up"></span></li>
-                        </div>
-                        <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: user; ratio: 2" id="icon3" class="uk-align-right uk-animation-scale-up"></span>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </nav>
+      
+            </div>
+          </nav>
         </div>
-
-
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <script type="text/javascript" src="./js/account.js"></script>
-    <script id="test"></script>
-</body>
+        <div class="uk-container uk-position-center" style="   background-color: #303030;">
+          <div>
+      
+            <h3 class="uk-heading-medium uk-align-center" id="bookmark"> Bookmarked <span uk-icon="icon: bookmark; ratio: 2"
+                id="bookmark-icon"> </span></h3>
+      
+            <div class="uk-card uk-align-center uk-grid-collapse uk-box-shadow-xlarge uk-margin uk-grid">
+              <ul uk-accordion class=" uk-align-center" id="list" style="text-align: center; font-size:small;"></ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+          <nav class="uk-navbar-container uk-position-fixed uk-position-bottom" uk-navbar="dropbar: true;" id="navBar"
+            style="position: relative; z-index: 980;">
+            <div class="uk-navbar-center">
+              <ul class="uk-navbar-nav">
+      
+                <div class="uk-animation-toggle" tabindex="0">
+                  <li><a href="/maps" uk-icon="icon: world; ratio: 2" id="user-icon"
+                      class="uk-align-right uk-animation-scale-up"></a></li>
+                </div>
+      
+                <div class="uk-animation-toggle" tabindex="0">
+                  <li><a href="/members" uk-icon="icon: home; ratio: 2" id="location-icon"
+                      class="uk-align-right uk-animation-scale-up"></a></li>
+                </div>
+      
+                <div class="uk-animation-toggle" tabindex="0">
+                  <li><a href="/logout" uk-icon="icon: sign-out; ratio: 2" id="logout-icon"
+                      class="uk-align-right uk-animation-scale-up"></a></li>
+                </div>
+      
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js "></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+        <script type="text/javascript" src="./js/account.js"></script>
+        <script id="test"></script></body>
 
 </html>

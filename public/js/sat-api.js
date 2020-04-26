@@ -1,6 +1,11 @@
 const queryN2YO = "https://www.n2yo.com/rest/v1/satellite/";
 const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
+var currentUserID = [];
+$.get("/api/user_data").then(function(data) {
+  currentUserID.push(data.id);
+  console.log(userID);
+});
 
 window.satApi = {
   //for future development of sat trajectory visualization
@@ -68,10 +73,6 @@ function getAboveHomePage(sats, searchRad) {
   const aboveDataHome = sats;
   $("#spinner").hide();
   $("#satellite-display").empty();
-  var userID = "";
-  $.get("/api/user_data").then(function(data) {
-    userID = data.id;
-  });
   for (let i = 0; i < aboveDataHome.length; i++) {
     var percentage1 = Math.floor(Math.random() * 100) + 1; //40
     var percentage2 = Math.floor(Math.random() * 100) + 1; //20
@@ -107,7 +108,7 @@ function getAboveHomePage(sats, searchRad) {
       satName: satellite.attr("data-name"),
       satID: satellite.attr("data-id"),
       nickname: satellite.attr("data-name"),
-      UserId: userID
+      UserId: currentUserID[0]
     };
     $.post("/api/new_user_favorites", satData).then(function() {
       getFavorites();
