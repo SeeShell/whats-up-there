@@ -12,6 +12,10 @@ a:hover {
     text-decoration: none;
 }
 
+.uk-button:hover {
+    color: white;
+}
+
 a {
     color: #bb86fc;
 }
@@ -73,48 +77,49 @@ a {
     background-color: #30303000;
 }
 
-.star{
+.star {
     background-color: white;
     width: 45px;
     height: 2px;
-    position: absolute ;
+    position: absolute;
     top: -200px;
     left: 200%;
     animation: shoot 5s linear infinite;
     opacity: 0%;
     transform: rotate(-20deg);
-  }
-  .star3 {
+}
+
+.star3 {
     top: -250px;
     animation-delay: 3s
-  }
-  .star4 {
+}
+
+.star4 {
     top: -0px;
     animation-delay: 2s
-  }
-  .star5 {
+}
+
+.star5 {
     top: 25px;
     animation-delay: 4s
-  }
-  
-  @keyframes shoot{
-    0%{
-      opacity: 0%;
+}
+
+@keyframes shoot {
+    0% {
+        opacity: 0%;
     }
-    1%{
-      opacity: 50%;
+    1% {
+        opacity: 50%;
     }
-    10%{
-      transform: rotate(-20deg) translate(-2000px , 0);
-      opacity: 50%;
+    10% {
+        transform: rotate(-20deg) translate(-2000px, 0);
+        opacity: 50%;
     }
-    11%{
-      opacity: 0%;
+    11% {
+        opacity: 0%;
     }
-    100%{
-      transform: rotate(-20deg) translate(-2000px , 0);
-      opacity: 0%;
-  
+    100% {
+        transform: rotate(-20deg) translate(-2000px, 0);
+        opacity: 0%;
     }
-  }
-  
+}
