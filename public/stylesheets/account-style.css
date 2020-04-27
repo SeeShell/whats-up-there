@@ -92,26 +92,45 @@ form.login {
     color: white !important;
 }
 
-#location-icon {
-    padding-top: 12px;
-    padding-bottom: 20px;
-    margin: 15px;
-    padding-left: 10px;
-    padding-right: 30px;
-}
-
-#logout-icon {
-    padding-top: 12px;
-    padding-bottom: 20px;
-    margin: 15px;
+#bookmark-icon1 {
+    margin: 0px;
     padding-right: 10px;
 }
 
-#user-icon {
-    padding-top: 12px;
-    padding-bottom: 20px;
+#bookmark-icon {
+    padding-top: 10px;
+    padding-bottom: 0px;
     margin: 15px;
-    padding-right: 30px;
+    margin-bottom: 0px;
+}
+
+#sat-icon {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 15px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+#location-icon {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 15px;
+    margin-bottom: 0px;
+}
+
+#logout-icon {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 15px;
+    margin-bottom: 0px;
+}
+
+#user-icon {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 15px;
+    margin-bottom: 0px;
 }
 
 .navTitle {
