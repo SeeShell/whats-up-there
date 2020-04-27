@@ -14,7 +14,7 @@ window.satApi = {
         url: queryN2YO + positionQuery + apiKeyN2YO,
         method: "GET"
       }).then(result => {
-        console.log(result);
+        // console.log(result);
       });
     });
   },
@@ -165,10 +165,8 @@ function displayVisPass(result) {
   const satDiv = `#nextGO-${satId}`;
   let spinnerID = `#spinner-vis-pass-${satId}`;
   if ($(spinnerID).is(":hidden")) {
-    console.log("hidden");
     return;
   } else {
-    console.log("visible");
     $(spinnerID).hide();
     let numPasses = "";
     let passes = "";
@@ -193,18 +191,15 @@ function displayVisPass(result) {
       numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
-      console.log(numPassesText);
     } else {
       let userDate = new Date();
       let userTimeZoneOffsetHour = userDate.getTimezoneOffset() / 60;
-      console.log(userTimeZoneOffsetHour);
       let numPassesLine = $("<p>");
       numPassesLine.addClass("uk-text-left");
       numPassesLine.addClass("uk-padding-remove");
       numPassesLine.addClass("vis-pass-title");
       numPassesLine.text(numPassesText);
       $(satDiv).append(numPassesLine);
-      console.log(numPassesText);
       passes.forEach(pass => {
         let timestamp = pass.startUTC;
         let date = new Date(timestamp * 1000);
@@ -228,7 +223,6 @@ function displayVisPass(result) {
           passTime.text(passTimeText);
           $(satDiv).append(passTime);
         } else {
-          console.log(dateValues);
           let passTime = $("<p>");
           passTime.addClass("uk-text-left");
           passTime.addClass("uk-margin-remove");

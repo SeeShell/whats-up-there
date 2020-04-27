@@ -3,8 +3,6 @@ window.navigator.geolocation.getCurrentPosition(logLocation);
 function logLocation(position) {
   const userLon = position.coords.longitude;
   const userLat = position.coords.latitude;
-  console.log(userLat, userLon);
-  console.log(position);
   localStorage.setItem("userLon", userLon);
   localStorage.setItem("userLat", userLat);
   satApi.getAbove(userLon, userLat, 0, 15, "members");
@@ -64,8 +62,6 @@ searchBtn.on("click", function(event) {
   let selectionArr = selection.split(" ");
   var selectedValue = selectionArr[0];
   let selectedCat = selectionArr[1];
-  console.log(selectedCat);
-  console.log(selectedValue);
   $("#num-sats").empty();
   $("#spinner").show();
   $("#satellite-display").empty();
