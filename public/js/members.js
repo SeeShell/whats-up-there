@@ -12,7 +12,7 @@ function logLocation(position) {
 }
 
 function showCity(userLat, userLon) {
-  var APIKey = "82fdd99a86105b66de45ae6fa55be58f";
+  var APIKey = process.env.N2YO_KEY;
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?lat=" +
     userLat +
