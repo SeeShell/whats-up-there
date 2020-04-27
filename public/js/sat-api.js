@@ -1,5 +1,5 @@
 const queryN2YO = "https://www.n2yo.com/rest/v1/satellite/";
-const apiKeyN2YO = `&apiKey=${process.env.N2YO_KEY}`;
+const apiKeyN2YO = "&apiKey=NWXNVK-K8V7UG-YTMY6D-4DCH";
 const userAlt = 0;
 var currentUserID = [];
 $.get("/api/user_data").then(function(data) {
