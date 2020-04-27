@@ -74,4 +74,5 @@ function initSatMap(mapCoords, satNames) {
     // Add the graphics to the view's graphics layer
     view.graphics.addMany(pointGraphics);
   }
+  $("#loading").hide();
 }
