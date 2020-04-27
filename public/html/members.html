@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="uk-cover-container" uk-height-viewport id="aerial-image">
         <img src="imgs/space.jpg" alt="" uk-cover>
 
@@ -20,23 +19,26 @@
                 <div class="uk-navbar-center">
 
                     <ul class="uk-navbar-nav">
-                        <p class="uk-heading-small">what's up there? <i class="fas fa-satellite-dish"></i></p>
+                        <p class="navTitle">what's up there? <img src="imgs/solar-system.png" class="filter uk-margin-small-left"> </p>
                     </ul>
-
+                    {{!-- class="uk-heading-small" --}}
                 </div>
             </nav>
         </div>
 
 
-        <div class="uk-align-center">
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="favorite-city">
+        <div id="satDisplay" class="uk-align-center">
+            <div class="uk-text-left uk-card uk-card-default uk-card-body" id="favorite-city">
             </div>
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="time">
+            <div class="uk-text-left uk-card uk-card-default uk-card-body" id="latlon">
             </div>
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="spinner" style="display: block">Scanning the Sky...<i class="fas fa-satellite rotate"></i>
+            <div class="uk-text-left uk-card uk-card-default uk-card-body" id="time">
             </div>
-            <div class="uk-align-center uk-card uk-card-default uk-card-body" id="satellite-display">
-                <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br>
+            <div class="uk-text-left uk-card uk-card-default uk-card-body uk-text-small uk-text-light uk-margin-small-bottom" id="num-sats"></div>
+            <div class="uk-text-left uk-card uk-card-default uk-card-body" id="spinner" style="display: block">Scanning the Sky...<i class="fas fa-satellite rotate"></i>
+            </div>
+            <div class="uk-align-center" id="satellite-display">
+                <br><br><br><br><br>
             </div>
         </div>
 
@@ -48,7 +50,9 @@
 
 
                         <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="icon: bookmark; ratio: 2" id="bookmark-icon" class="uk-align-left uk-animation-scale-up" uk-toggle="target: #offcanvas-slide"></span></li>
+                            <li>
+                                <a uk-icon="icon: bookmark; ratio: 2" uk-tooltip="title: Bookmarks; delay: 100;" id="bookmark-icon" class="uk-align-left uk-animation-scale-up" uk-toggle="target: #offcanvas-slide"></a>
+                            </li>
                         </div>
                         <div id="offcanvas-slide" uk-offcanvas="mode: slide; overlay: true">
                             <div class="uk-offcanvas-bar">
@@ -63,7 +67,9 @@
 
 
                         <div class="uk-animation-toggle" tabindex="0">
-                            <li><span uk-icon="ratio: 2" id="sat-icon" href="#satellite-categories" uk-toggle> <i href="#satellite-categories" class="fas fa-satellite uk-align-center uk-animation-scale-up"></i></span></li>
+                            <li>
+                                <a uk-icon="ratio: 2" id="sat-icon" href="#satellite-categories" uk-tooltip="title: Categories; delay: 100;" uk-toggle> <i href="#satellite-categories" class="fas fa-satellite uk-align-center uk-animation-scale-up"></i></a>
+                            </li>
 
 
                             <div id="satellite-categories" class="uk-flex-top" uk-modal>
@@ -78,7 +84,7 @@
                                                 <p>CATEGORIES</p>
                                                 <select name="satelliteCat" id="categories">
                                                 <option selected="selected" id="select" value="">Please select...</option>
-                                                <option id= "18" value="18">AMATEUR RADIO </option>
+                                                <option id= "18" value="18 AMATEUR-RADIO">AMATEUR RADIO </option>
                                                 <option id= "6" value="6">EARTH RESOURCES</option>
                                                 <option id= "29" value="29">EDUCATION</option>
                                                 <option id= "19" value="19">EXPERIMENTAL</option>
@@ -97,6 +103,7 @@
                                                 <option id= "34" value="34">TV</option>
                                                 <option id= "3" value="3">WEATHER</option>
                                                 <option id= "33" value="33">XM AND SIRIUS</option>
+                                                <option id= "0" value="0">ALL</option>
                                             </select>
 
                                                 <button class="uk-button uk-button-default" id="drop" class="button" tabindex="-1">
@@ -108,7 +115,7 @@
                                     <br>
                                     </div>
 
-                                    <button class="uk-button uk-button-default" id="searchBtn" type="submit">SEARCH</button>
+                                    <button class="uk-button uk-button-default uk-modal-close" id="searchBtn" type="submit">SEARCH</button>
 
 
                                 </div>
@@ -118,14 +125,20 @@
 
                         <div class="uk-animation-toggle" tabindex="0">
                             <li>
-                                <a href="/maps" uk-icon="icon: world; ratio: 2" id="location-icon" class="uk-align-center uk-animation-scale-up"></a>
+                                <a href="/maps" uk-icon="icon: world; ratio: 2" uk-tooltip="title: Map; delay: 100;" id="location-icon" class="uk-align-center uk-animation-scale-up"></a>
                             </li>
                         </div>
 
 
                         <div class="uk-animation-toggle" tabindex="0">
                             <li>
-                                <a href="/account" uk-icon="icon: user; ratio: 2" id="user-icon" class="uk-align-right uk-animation-scale-up"></a>
+                                <a href="/account" uk-icon="icon: user; ratio: 2" id="user-icon" uk-tooltip="title: Profile; delay: 100;" class="uk-align-right uk-animation-scale-up"></a>
+                            </li>
+                        </div>
+
+                        <div class="uk-animation-toggle" tabindex="0">
+                            <li>
+                                <a href="/logout" uk-icon="icon: sign-out; ratio: 2" id="logout-icon" uk-tooltip="title: Logout; delay: 100;" class="uk-align-right uk-animation-scale-up"></a>
                             </li>
                         </div>
 
@@ -142,7 +155,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="./js/sat-api.js"></script>
+    <script type="text/javascript" src="./js/satmap.js"></script>
     <script type="text/javascript" src="./js/members.js"></script>
 
 </body>
